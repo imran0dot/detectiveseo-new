@@ -4,15 +4,15 @@ import "../styles/globals.css"
 
 
 function MyApp({ Component, pageProps }) {
-  const [loader, setLoader] = useState(true);
-  useEffect(() => {
-    setTimeout(() => {
-      setLoader(false);
-    }, 300);
-  }, []);
+  // const [loader, setLoader] = useState(true);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setLoader(false);
+  //   }, 300);
+  // }, []);
   return (
     <Fragment>
-      {loader && <PreLoader />}
+      {/* {loader && <PreLoader />} */}
       <Component {...pageProps} />
     </Fragment>
   );
