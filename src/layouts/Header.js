@@ -17,8 +17,10 @@ const Header = () => {
               <div className="branding-and-language-selection">
                 <div className="brand-logo">
                   <Link href="/">
-                    <a>
-                      <img src="assets/img/logo-1.png" alt="logo" />
+                    <a className="nav-text">
+                      {/* TODO  */}
+                      {/* <img src="assets/img/logo-1.png" alt="logo" /> */}
+                      Detective <span className="nav-text-symbol">SEO</span>
                     </a>
                   </Link>
                 </div>

@@ -3,8 +3,8 @@ const PreLoader = () => {
     <div id="preloader">
       <img
         className="preloader-image"
-        width="60"
-        src="assets/img/preloader-logo.png"
+        width="100"
+        src="assets/img/loderimage.gif"
         alt="preloader"
       />
     </div>

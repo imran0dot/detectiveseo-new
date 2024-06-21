@@ -10265,5 +10265,16 @@ textarea {
 }
 
 
+/* custom CSS  */
 
+.nav-text{
+  font-size: xx-large;
+  color: var(--color-dark);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.nav-text-symbol{
+  color: var(--color-primary);
+}
 /*# sourceMappingURL=style.css.map */
