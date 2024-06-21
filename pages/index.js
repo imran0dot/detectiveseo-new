@@ -71,7 +71,7 @@ const Index = () => {
           </div>
         </div>
       </section>
-      {/* <!--====== End Hero Area ======--> */}
+      {/* <!--====== End Hero Area Updated ======--> */}
 
 
 
