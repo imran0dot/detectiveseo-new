@@ -4,7 +4,7 @@ import { Blog, Demos, Pages1st, Pages2nd, Portfolio, Services } from "./Menus";
 const MobileMenu = ({ show, close }) => {
   const [activeMenu, setActiveMenu] = useState("");
   const activeMenuSet = (value) =>
-      setActiveMenu(activeMenu === value ? "" : value),
+    setActiveMenu(activeMenu === value ? "" : value),
     activeLi = (value) =>
       value === activeMenu ? { display: "block" } : { display: "none" };
   return (
@@ -12,9 +12,14 @@ const MobileMenu = ({ show, close }) => {
       <div className="panel-overlay" onClick={() => close()}></div>
       <div className="panel-inner">
         <div className="mobile-logo">
-          <Link href="/">
+          {/* <Link href="/">
             <a>
               <img src="assets/img/logo-1.png" alt="Landio" />
+            </a>
+          </Link> */}
+          <Link href="/">
+            <a className="" style={{fontSize:"25px", fontWeight:"bold", color:"black"}}>
+              Detective <span className="nav-text-symbol">SEO</span>
             </a>
           </Link>
         </div>
@@ -45,7 +50,7 @@ const MobileMenu = ({ show, close }) => {
             {/* Services */}
 
             <li>
-              <Link href="/portfolio">
+              <Link href="/case_study">
                 <a>
                   Case Study
                 </a>
@@ -100,7 +105,7 @@ const MobileMenu = ({ show, close }) => {
           </ul>
 
         </nav>
-        <a href="#" className="panel-close" onClick={() => close()}>
+        <a href="#" className="panel-close" style={{marginTop:"28px"}} onClick={() => close()}>
           <i className="fal fa-times"></i>
         </a>
       </div>

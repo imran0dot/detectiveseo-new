@@ -3,10 +3,16 @@ import Slider from "react-slick";
 import Counter from "../src/components/Counter";
 import Layouts from "../src/layouts/Layouts";
 import { testimonialActiveOne } from "../src/sliderProps";
+import Head from "next/head";
 
 const Index = () => {
   return (
     <Layouts>
+
+      <Head>
+        <title>DetectiveSEO | Home</title>
+      </Head>
+
       <section className="hero-area-v1">
         <div className="container">
           <div className="row justify-content-center">

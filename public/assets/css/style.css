@@ -1561,7 +1561,7 @@ textarea {
   width: 55px;
   padding: 10px;
   font-size: 0;
-  border: 2px solid var(--color-heading);
+  /* border: 2px solid var(--color-heading); */
   border-radius: 5px;
 }
 
@@ -1573,6 +1573,7 @@ textarea {
 
 .template-header .navbar-toggler span:nth-child(2) {
   margin: 6px 0;
+  width: 20px;
 }
 
 .template-header.navbar-right .nav-menu ul > li:last-child {

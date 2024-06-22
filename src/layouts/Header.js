@@ -45,7 +45,7 @@ const Header = () => {
                   </li>
 
                   <li>
-                    <Link href="/portfolio">
+                    <Link href="/case_study">
                       <a>
                         Case Study
                       </a>
@@ -88,12 +88,12 @@ const Header = () => {
 
                   <li>
                     <Link href="/about">
-                      <a>About US</a>
+                      <a>About</a>
                     </Link>
                   </li>
                   <li>
                     <Link href="/contact">
-                      <a>Contact Us</a>
+                      <a>Contact</a>
                     </Link>
                   </li>
                 </ul>
@@ -120,6 +120,7 @@ const Header = () => {
                   </Link>
                 </li>
                 <li className="d-xl-none">
+                  
                   <a
                     href="#"
                     className="navbar-toggler"

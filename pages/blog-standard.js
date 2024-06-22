@@ -7,6 +7,7 @@ import { testimonialwidgetactive } from "../src/sliderProps";
 import { getPagination, pagination } from "../src/utils";
 import { axiosInstace } from "../src/utils";
 import PostCard from "../src/components/PostCard";
+import Head from "next/head";
 
 const BlogStandard = () => {
   let sort = 2;
@@ -29,6 +30,11 @@ const BlogStandard = () => {
 
   return (
     <Layouts pageTitle="Blog Standard">
+
+      <Head>
+          <title>DetectiveSEO | Blog</title>
+        </Head>
+
       <section className="blog-area p-t-130 p-b-130">
         <div className="container">
           <div className="row justify-content-center">

@@ -120,7 +120,14 @@ const Footer = () => {
           <div className="row align-items-center justify-content-between">
             <div className="col-sm-auto col-12">
               <div className="copyright-logo text-center text-sm-left">
-                <img src="assets/img/logo-1.png" alt="Landio" />
+                {/* <img src="assets/img/logo-1.png" alt="Landio" /> */}
+                <Link href="/">
+                    <a className="nav-text">
+                      {/* TODO  */}
+                      {/* <img src="assets/img/logo-1.png" alt="logo" /> */}
+                      Detective <span className="nav-text-symbol">SEO</span>
+                    </a>
+                  </Link>
               </div>
             </div>
             <div className="col-sm-auto col-12">
