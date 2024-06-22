@@ -1,7 +1,11 @@
+import Head from "next/head";
 import Layouts from "../src/layouts/Layouts";
 
 const Contact = () => {
   return <Layouts pageTitle="Contact">
+    <Head>
+        <title>DetectiveSEO | Contact Us</title>
+    </Head>
     <section className="blog-area p-t-130 p-b-130">
         <div className="container">
             <div className="row justify-content-lg-start justify-content-center">
