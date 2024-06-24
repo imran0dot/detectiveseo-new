@@ -8,16 +8,24 @@ import { getPagination, pagination } from "../src/utils";
 import { axiosInstace } from "../src/utils";
 import PostCard from "../src/components/PostCard";
 import Head from "next/head";
+import { useGetAllBlogQuery } from "../src/features/apiSlice";
+
 
 const BlogStandard = () => {
   let sort = 2;
   const [active, setActive] = useState(1);
   const [state, setstate] = useState([]);
   const [blogs, setBlogs] = useState([]);
+
+  const { data, error, isLoading } = useGetAllBlogQuery('');
+
+  console.log(data);
+
   useEffect(() => {
     pagination(".single-blog-post", sort, active);
     let list = document.querySelectorAll(".single-blog-post");
     setstate(getPagination(list.length, sort));
+
   }, [active]);
 
   useEffect(()=>{
