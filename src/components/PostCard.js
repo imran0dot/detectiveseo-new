@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React, { useEffect } from 'react';
-import { axiosInstace, dateConvert } from '../utils';
+import { axiosInstace, dateConvert, titleIntoUrl } from '../utils';
 import { useGetMediaQuery } from '../features/apiSlice';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
@@ -10,6 +10,7 @@ const PostCard = ({ postDetails }) => {
     const { data: image, isLoading, isError } = useGetMediaQuery(featured_media);
 
     const convertDate = dateConvert(date);
+    const covertTitle = titleIntoUrl(title.rendered);
 
     return (
         <div>
@@ -28,7 +29,7 @@ const PostCard = ({ postDetails }) => {
                     <ul className="post-meta">
                         <li>
                             <a href="#" className="post-meta">
-                                <i className="far fa-user"></i>Nichel Jhon
+                                <i className="far fa-user"></i>DetectiveSEO
                             </a>
                         </li>
                         <li>
@@ -58,7 +59,7 @@ const PostCard = ({ postDetails }) => {
                         </p>
                     </div>
 
-                    <Link href="/blog-details">
+                    <Link href={`/blog-details/${covertTitle}`}>
                         <a className="post-read-more">
                             Learn More <i className="fas fa-arrow-right"></i>
                         </a>

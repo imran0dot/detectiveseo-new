@@ -105,4 +105,8 @@ export const dateConvert = (dateString) => {
 
   // Display the formatted date
   return formattedDate
-}
+};
+
+export const titleIntoUrl = (title) => {
+  return title?.split(' ').join('-').toLowerCase();
+};
