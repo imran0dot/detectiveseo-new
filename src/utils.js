@@ -86,3 +86,23 @@ export const getPagination = (totalNumber, sort) => {
 export const axiosInstace = axios.create({
   baseURL: 'https://admin.detectiveseo.com/wp-json/wp/v2',
 })
+
+
+export const dateConvert = (dateString) => {
+
+  // Convert the string to a Date object
+  const date = new Date(dateString);
+
+  // Define options for formatting the date
+  const options = {
+    year: 'numeric',
+    month: 'long', 
+    day: 'numeric', 
+  };
+
+  // Format the date using toLocaleDateString
+  const formattedDate = date.toLocaleDateString('en-US', options);
+
+  // Display the formatted date
+  return formattedDate
+}

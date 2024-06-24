@@ -7,9 +7,16 @@ export const blogApi = createApi({
   }),
   endpoints: (builder) => ({
     getAllBlog: builder.query({
-      query: (remainUrl) => `posts/${remainUrl}`, 
+      query: () => `posts?_fields=id,title,featured_media,date,categories,content`, 
     }),
+    getBlog: builder.query({
+      query: (post_id) => `posts/${post_id}`,
+    }),
+    getMedia: builder.query({
+      query: (media_id) => `/media/${media_id}?_fields=guid`,
+      transformResponse: (response) => response.guid.rendered
+    })
   }),
 });
 
-export const { useGetAllBlogQuery } = blogApi;
+export const { useGetAllBlogQuery, useGetBlogQuery, useGetMediaQuery } = blogApi;

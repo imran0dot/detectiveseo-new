@@ -220,6 +220,8 @@ img {
   transition: all 0.3s ease-out 0s;
 }
 
+
+
 .slick-slide img {
   display: inline-block;
 }
@@ -8985,6 +8987,8 @@ textarea {
 .blog-details-content .post-thumbnail img {
   -webkit-transition: 0.3s;
   transition: 0.3s;
+    width: 100%;
+    object-fit: cover;
 }
 
 .blog-details-content .post-title {

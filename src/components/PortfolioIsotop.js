@@ -12,8 +12,11 @@ const PortfolioIsotop = () => {
         itemSelector: ".single-portfolio",
         layoutMode: "fitRows",
       });
-    }, 300);
-    return () => isotope.current.destroy();
+    }, 300)
+    return () => 
+      {if (isotope.current) {
+        isotope.current.destroy();
+      }};
   }, []);
   useEffect(() => {
     if (isotope.current) {

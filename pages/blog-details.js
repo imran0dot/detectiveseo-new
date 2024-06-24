@@ -3,8 +3,14 @@ import Slider from "react-slick";
 import Subscribe from "../src/components/Subscribe";
 import Layouts from "../src/layouts/Layouts";
 import { testimonialwidgetactive } from "../src/sliderProps";
+import { useGetBlogQuery } from "../src/features/apiSlice";
 // This is the single blog page
 const BlogDetails = () => {
+
+  const { data, error, isLoading } = useGetBlogQuery(22);
+
+  // console.log(data);
+  
   return (
     <Layouts pageTitle="Blog Details">
       <section className="blog-area p-t-130 p-b-130">

@@ -35,7 +35,7 @@ const Footer = () => {
 
                   <li>
                     <a href="https://www.trustpilot.com/review/detectiveseo.com">
-                      <i class="fa-solid fa-star" ></i>
+                      <i className="fa-solid fa-star" ></i>
                     </a>
                   </li>
                 </ul>
