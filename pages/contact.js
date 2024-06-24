@@ -6,6 +6,7 @@ const Contact = () => {
     return <Layouts pageTitle="Contact">
         <Head>
             <title>DetectiveSEO | Contact Us</title>
+            
         </Head>
         <section className="blog-area p-t-130 p-b-130">
             <div className="container">
@@ -87,9 +88,6 @@ const Contact = () => {
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3635.3767930410313!2d90.02627677535409!3d24.33336407827708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37560330a8f99541%3A0xbca4f66b12138aa1!2sLocal%20and%20Small%20Business%20SEO%20%7C%20Detective%20SEO!5e0!3m2!1sen!2sbd!4v1717653766551!5m2!1sen!2sbd" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </section>
-
-        {/* Live Chat Btn */}
-        <a href="https://wa.me/8801841129353" className="live-chat-btn"><i className="fab fa-whatsapp"></i></a>
 
     </Layouts>;
 };
