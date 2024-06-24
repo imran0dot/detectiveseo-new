@@ -31,7 +31,7 @@ const BlogStandard = () => {
 
 
   return (
-    <Layouts pageTitle="Blog Standard">
+    <Layouts pageTitle="Blog">
 
       <Head>
           <title>DetectiveSEO | Blog</title>
