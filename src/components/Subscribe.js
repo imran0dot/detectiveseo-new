@@ -1,8 +1,14 @@
+import particle2 from '../../public/assets/img/particle/particle-2.png'
+import particle3 from '../../public/assets/img/particle/particle-3.png'
+import particle4 from '../../public/assets/img/particle/particle-4.png'
+import particle5 from '../../public/assets/img/particle/particle-5.png'
+import newsLatterBg from '../../public/assets/img/particle/newsletter-bg.png'
 const Subscribe = () => {
+  console.log(particle2);
   return (
     <section
       className="newsletter-area bg-cover-center bg-soft-grey-color p-t-130 p-b-130"
-      style={{ backgroundImage: "url(assets/img/particle/newsletter-bg.png)" }}
+      style={{ backgroundImage:`url(${newsLatterBg})`}}
     >
       <div className="container">
         <div className="row justify-content-center">
@@ -30,22 +36,25 @@ const Subscribe = () => {
       <div className="newsletter-particle-effect d-none d-md-block">
         <img
           className="particle-1 animate-float-bob-y"
-          src="assets/img/particle/particle-2.png"
+          src={particle2?.src}
           alt="particle Two"
         />
         <img
           className="particle-2 animate-zoominout"
-          src="assets/img/particle/particle-3.png"
+          // src="assets/img/particle/particle-3.png"
+          src={particle3?.src}
           alt="particle Three"
         />
         <img
           className="particle-3 animate-zoominout"
-          src="assets/img/particle/particle-4.png"
+          // src="assets/img/particle/particle-4.png"
+          src={particle4?.src}
           alt="particle Four"
         />
         <img
           className="particle-4 animate-zoominout"
-          src="assets/img/particle/particle-5.png"
+          // src="assets/img/particle/particle-5.png"
+          src={particle5?.src}
           alt="particle Five"
         />
       </div>

@@ -1,39 +1,41 @@
 import Link from 'next/link';
 import React, { useEffect } from 'react';
-import { axiosInstace } from '../utils';
+import { axiosInstace, dateConvert, titleIntoUrl } from '../utils';
+import { useGetMediaQuery } from '../features/apiSlice';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
-const PostCard = ({postDetails}) => {
-    console.log(postDetails.featured_media);
-    const mediaId = postDetails.featured_media;
-    console.log(postDetails);
-    // useEffect(()=>{
-    //     axiosInstace.get(`/media/${mediaId}`)
-    //     .then(res => {
-    //         const result = res.data;
-    //         console.log(result?.media_details?.sizes?.large);
-    //     })
-    // },[])
-    const { title } = postDetails;
+const PostCard = ({ postDetails }) => {
+    const { featured_media, title, date, id } = postDetails;
+    const { data: image, isLoading, isError } = useGetMediaQuery(featured_media);
+
+    const convertDate = dateConvert(date);
+    const covertTitle = titleIntoUrl(title.rendered);
 
     return (
         <div>
             <div className="single-blog-post">
                 <div className="post-thumbnail">
-                    <img
-                        src="assets/img/blog/blog-standard-thumbnail-1.jpg"
-                        alt="blog thumbnail one"
-                    />
+                    {isLoading ?
+                        <Skeleton height={200} /> :
+                        <img
+                            src={image}
+                            alt="blog thumbnail one"
+                            className='post-thumbnail-img'
+                        />}
+
                 </div>
                 <div className="post-content">
                     <ul className="post-meta">
                         <li>
                             <a href="#" className="post-meta">
-                                <i className="far fa-user"></i>Nichel Jhon
+                                <i className="far fa-user"></i>DetectiveSEO
                             </a>
                         </li>
                         <li>
                             <a href="#" className="post-meta">
-                                <i className="far fa-calendar-alt"></i>25 May 2021
+                                <i className="far fa-calendar-alt"></i>
+                                {convertDate}
                             </a>
                         </li>
                         <li>
@@ -57,7 +59,7 @@ const PostCard = ({postDetails}) => {
                         </p>
                     </div>
 
-                    <Link href="/blog-details">
+                    <Link href={`/blog/${id}`}>
                         <a className="post-read-more">
                             Learn More <i className="fas fa-arrow-right"></i>
                         </a>

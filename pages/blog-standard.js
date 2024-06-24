@@ -8,32 +8,34 @@ import { getPagination, pagination } from "../src/utils";
 import { axiosInstace } from "../src/utils";
 import PostCard from "../src/components/PostCard";
 import Head from "next/head";
+import { useGetAllBlogQuery } from "../src/features/apiSlice";
+import PostCardSkeleton from "../src/components/PorstCardSkeleton";
+
 
 const BlogStandard = () => {
   let sort = 2;
   const [active, setActive] = useState(1);
   const [state, setstate] = useState([]);
-  const [blogs, setBlogs] = useState([]);
+
+  const { data: blogs, error, isLoading } = useGetAllBlogQuery();
+
+
   useEffect(() => {
     pagination(".single-blog-post", sort, active);
     let list = document.querySelectorAll(".single-blog-post");
     setstate(getPagination(list.length, sort));
+
   }, [active]);
 
-  useEffect(()=>{
-    axiosInstace.get('/posts')
-      .then(res => {
-        const result = res.data;
-        setBlogs(result);
-      })
-  },[])
+
+
 
   return (
     <Layouts pageTitle="Blog Standard">
 
       <Head>
           <title>DetectiveSEO | Blog</title>
-        </Head>
+      </Head>
 
       <section className="blog-area p-t-130 p-b-130">
         <div className="container">
@@ -42,7 +44,8 @@ const BlogStandard = () => {
             <div className="col-lg-8">
               <div className="blog-post-items p-r-40 p-r-lg-0">
                 {
-                  blogs.map(blog => <PostCard postDetails={blog} key={blog?.id}  />)
+                  isLoading? <PostCardSkeleton /> :
+                  blogs?.map(blog => <PostCard postDetails={blog} key={blog?.id}  />)
                 }
               </div>
 
@@ -59,7 +62,7 @@ const BlogStandard = () => {
                   </a>
                 </li>
                 {state &&
-                  state.map((s, i) => (
+                  state?.map((s, i) => (
                     <li key={i}>
                       <a
                         className={` ${active === s ? "active" : ""}`}
@@ -91,7 +94,7 @@ const BlogStandard = () => {
 
             {/* Start Side-bar */}
 
-            <div className="col-lg-4">
+            {/* <div className="col-lg-4">
               <div className="blog-sidebar m-t-md-80">
                 <div className="widget search-widget">
                   <h4>Search Here</h4>
@@ -276,7 +279,7 @@ const BlogStandard = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

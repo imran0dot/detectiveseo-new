@@ -133,7 +133,7 @@ const About = () => {
           </div>
 
           <div className="row team-members">
-            <div className="col-xl-3 col-lg-4 col-sm-6">
+            <div className="col-xl-4 col-lg-4 col-sm-6">
               <div className="member-box m-b-30">
                 <div className="member-photo">
                   <img src="assets/img/team/member-1.jpg" alt="Member Photo" />
@@ -168,7 +168,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="col-xl-3 col-lg-4 col-sm-6">
+            <div className="col-xl-4 col-lg-4 col-sm-6">
               <div className="member-box m-b-30">
                 <div className="member-photo">
                   <img src="assets/img/team/member-2.jpg" alt="Member Photo" />
@@ -203,7 +203,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="col-xl-3 col-lg-4 col-sm-6">
+            <div className="col-xl-4 col-lg-4 col-sm-6">
               <div className="member-box m-b-30">
                 <div className="member-photo">
                   <img src="assets/img/team/member-3.jpg" alt="Member Photo" />
@@ -238,7 +238,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="col-xl-3 col-lg-4 col-sm-6">
+            <div className="col-xl-4 col-lg-4 col-sm-6">
               <div className="member-box m-b-30">
                 <div className="member-photo">
                   <img src="assets/img/team/member-4.jpg" alt="Member Photo" />
@@ -273,7 +273,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="col-xl-3 col-lg-4 col-sm-6">
+            <div className="col-xl-4 col-lg-4 col-sm-6">
               <div className="member-box m-b-30">
                 <div className="member-photo">
                   <img src="assets/img/team/member-5.jpg" alt="Member Photo" />
@@ -308,7 +308,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="col-xl-3 col-lg-4 col-sm-6">
+            <div className="col-xl-4 col-lg-4 col-sm-6">
               <div className="member-box m-b-30">
                 <div className="member-photo">
                   <img src="assets/img/team/member-6.jpg" alt="Member Photo" />
@@ -343,7 +343,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="col-xl-3 col-lg-4 col-sm-6">
+            {/* <div className="col-xl-4 col-lg-4 col-sm-6">
               <div className="member-box m-b-30">
                 <div className="member-photo">
                   <img src="assets/img/team/member-7.jpg" alt="Member Photo" />
@@ -378,7 +378,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="col-xl-3 col-lg-4 col-sm-6">
+            <div className="col-xl-4 col-lg-4 col-sm-6">
               <div className="member-box m-b-30">
                 <div className="member-photo">
                   <img src="assets/img/team/member-8.jpg" alt="Member Photo" />
@@ -412,7 +412,7 @@ const About = () => {
                   </ul>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
