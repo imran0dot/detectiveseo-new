@@ -1,16 +1,29 @@
 import Link from "next/link";
 import Slider from "react-slick";
-import Subscribe from "../src/components/Subscribe";
-import Layouts from "../src/layouts/Layouts";
-import { testimonialwidgetactive } from "../src/sliderProps";
-import { useGetBlogQuery } from "../src/features/apiSlice";
+import Subscribe from "../../src/components/Subscribe";
+import Layouts from "../../src/layouts/Layouts";
+import { testimonialwidgetactive } from "../../src/sliderProps";
+import { useFindIdByTitleQuery, useGetBlogQuery, useGetMediaQuery } from "../../src/features/apiSlice";
+import { useRouter } from "next/dist/client/router";
+import { UrlToTitle } from "../../src/utils";
+import BlogDetailsSkeleton from "../../src/components/BlogDetailsSkeleton";
 // This is the single blog page
 const BlogDetails = () => {
 
-  const { data, error, isLoading } = useGetBlogQuery(22);
+  // find id using url 
+  const { asPath } = useRouter();
+  const getTitlePatchFromPath = asPath.split('/')[2];
 
-  // console.log(data);
-  
+  // const covertUrlToTitle = UrlToTitle(getTitlePatchFromPath);
+  // const blogId = useFindIdByTitleQuery(covertUrlToTitle);
+
+
+  // get exact data using Id 
+  const { data, isLoading, isError } = useGetBlogQuery(getTitlePatchFromPath);
+
+  console.log(data);
+  const { data: image, isLoading: imageLoading, isError: imageError } = useGetMediaQuery(data?.featured_media);
+
   return (
     <Layouts pageTitle="Blog Details">
       <section className="blog-area p-t-130 p-b-130">
@@ -18,166 +31,150 @@ const BlogDetails = () => {
           <div className="row justify-content-center">
             <div className="col-lg-8">
               {/* <!-- Blog Content --> */}
-              <div className="blog-details-content p-r-40 p-r-lg-0">
-                <div className="post-thumbnail">
-                  <img
-                    src="assets/img/blog/blog-standard-thumbnail-1.jpg"
-                    alt="blog thumbnail one"
-                  />
-                </div>
+              {isLoading ? <BlogDetailsSkeleton /> :
+                <div className="blog-details-content p-r-40 p-r-lg-0">
+                  <div className="post-thumbnail">
+                    <img
+                      src={image}
+                      alt="blog thumbnail one"
+                    />
+                  </div>
 
-                <div className="post-content">
-                  <ul className="post-meta">
-                    <li>
-                      <a href="#" className="post-meta">
-                        <i className="far fa-user"></i>Nichel Jhon
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="post-meta">
-                        <i className="far fa-calendar-alt"></i>25 May 2021
-                      </a>{" "}
-                    </li>
-                    <li>
-                      <a href="#" className="post-meta">
-                        <i className="far fa-comment-dots"></i>Comments (05)
-                      </a>
-                    </li>
-                  </ul>
-                  <h3 className="post-title">
-                    <Link href="/blog-details">
-                      <a>
-                        Multiplayer Text Adventure Engine In Node Game Engine
-                        Server Design Optimizing
-                      </a>
-                    </Link>
-                  </h3>
+                  <div className="post-content">
+                    <ul className="post-meta">
+                      <li>
+                        <a href="#" className="post-meta">
+                          <i className="far fa-user"></i>Nichel Jhon
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" className="post-meta">
+                          <i className="far fa-calendar-alt"></i>25 May 2021
+                        </a>{" "}
+                      </li>
+                      <li>
+                        <a href="#" className="post-meta">
+                          <i className="far fa-comment-dots"></i>Comments (05)
+                        </a>
+                      </li>
+                    </ul>
+                    <h3 className="post-title">
+                      {data?.title?.rendered}
+                    </h3>
 
-                  <p>
-                    Sed ut perspiciatis unde omnis iste natus error sit
-                    voluptatem accusantium doloremque laudantium, totam rem
-                    aperiam, eaque ipsa quae ab illo inventore veritatis et
-                    quasi architecto beatae vitae dicta sunt explicabo. Nemo
-                    enim ipsam voluptatem quia voluptas sit aspernatur aut odit
-                    aut fugit, sed quia consequuntur magni dolores eos qui
-                    ratione voluptatem sequi nesciunt. Neque porro quisquam est,
-                    qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
-                    velit, sed quia non numquam eius modi tempora incidunt ut
-                    labore et dolore magnam aliquam quaerat voluptatem. Ut enim
-                    ad minima veniam, quis nostrum exercitationem ullam corporis
-                    suscipit laboriosam, nisi ut aliquid ex ea commodi
-                    consequatur? Quis autem vel eum iure reprehenderit qui in ea
-                    voluptate velit esse quam nihil molestiae consequatur, vel
-                    illum qui dolorem eum fugiat quoe
-                  </p>
+                    <div dangerouslySetInnerHTML={{ __html: data ? data?.content?.rendered : '' }}></div>
 
-                  <blockquote className="blockquote">
-                    <p>
-                      Combinin Graphica And Voice Interfaces For Better User
-                      Experience Deceive Avoiding Bias
-                    </p>
-                    <cite>Bailey Dobson</cite>
-                  </blockquote>
 
-                  <h4 className="post-subtitle">
-                    Ensure Your Design System Achieve
-                  </h4>
-
-                  <p>
-                    No one rejects, dislikes, or avoids pleasure itself, because
-                    it is pleasure, but because those who do not know how to
-                    pursue pleasure rationally encounter consequences that
-                    extremely painful. Nor again is there anyone who loves or
-                    pursues or desires to obtain pain of itself, because it is
-                    pain, but because occasionally circumstances occur in which
-                    toil and pain can procure him some great pleasure.
-                  </p>
-                </div>
-                <div className="post-footer m-t-40">
-                  <ul className="related-tags">
-                    <li className="item-heading">Related Tags: </li>
-                    <li>
-                      <a href="#">Landing</a>
-                    </li>
-                    <li>
-                      <a href="#">UI Design</a>
-                    </li>
-                    <li>
-                      <a href="#">Development</a>
-                    </li>
-                    <li>
-                      <a href="#">Mobile Apps</a>
-                    </li>
-                  </ul>
-                  <ul className="social-links">
-                    <li className="item-heading">Share :</li>
-                    <li>
-                      <a href="#">
-                        <i className="fab fa-facebook-f"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i className="fab fa-twitter"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i className="fab fa-instagram"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i className="fab fa-behance"></i>
-                      </a>
-                    </li>
-                  </ul>
-
-                  <div className="post-author-box">
-                    <div className="author-thumbnail">
-                      <img
-                        src="assets/img/blog/author-thumbnail.jpg"
-                        alt="Post Author"
-                      />
-                    </div>
-                    <div className="author-content">
-                      <h4 className="name">Nathan George</h4>
+                    <blockquote className="blockquote">
                       <p>
-                        Quis autem veleum iure reprehenderit quinea voluptate
-                        esse quam molestiae consequatu velillum dolorem fugiat
-                        quo voluptas nulla pariano one rejects
+                        Combinin Graphica And Voice Interfaces For Better User
+                        Experience Deceive Avoiding Bias
                       </p>
-                      <ul className="social-links">
-                        <li>
-                          <a href="#">
-                            <i className="fab fa-facebook-f"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <i className="fab fa-twitter"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <i className="fab fa-instagram"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <i className="fab fa-behance"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <i className="fab fa-dribbble"></i>
-                          </a>
-                        </li>
-                      </ul>
+                      <cite>Bailey Dobson</cite>
+                    </blockquote>
+
+                    <h4 className="post-subtitle">
+                      Ensure Your Design System Achieve
+                    </h4>
+
+                    <p>
+                      No one rejects, dislikes, or avoids pleasure itself, because
+                      it is pleasure, but because those who do not know how to
+                      pursue pleasure rationally encounter consequences that
+                      extremely painful. Nor again is there anyone who loves or
+                      pursues or desires to obtain pain of itself, because it is
+                      pain, but because occasionally circumstances occur in which
+                      toil and pain can procure him some great pleasure.
+                    </p>
+                  </div>
+
+
+                  <div className="post-footer m-t-40">
+                    <ul className="related-tags">
+                      <li className="item-heading">Related Tags: </li>
+                      <li>
+                        <a href="#">Landing</a>
+                      </li>
+                      <li>
+                        <a href="#">UI Design</a>
+                      </li>
+                      <li>
+                        <a href="#">Development</a>
+                      </li>
+                      <li>
+                        <a href="#">Mobile Apps</a>
+                      </li>
+                    </ul>
+                    <ul className="social-links">
+                      <li className="item-heading">Share :</li>
+                      <li>
+                        <a href="#">
+                          <i className="fab fa-facebook-f"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i className="fab fa-twitter"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i className="fab fa-instagram"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i className="fab fa-behance"></i>
+                        </a>
+                      </li>
+                    </ul>
+
+                    <div className="post-author-box">
+                      <div className="author-thumbnail">
+                        <img
+                          src="assets/img/blog/author-thumbnail.jpg"
+                          alt="Post Author"
+                        />
+                      </div>
+                      <div className="author-content">
+                        <h4 className="name">Nathan George</h4>
+                        <p>
+                          Quis autem veleum iure reprehenderit quinea voluptate
+                          esse quam molestiae consequatu velillum dolorem fugiat
+                          quo voluptas nulla pariano one rejects
+                        </p>
+                        <ul className="social-links">
+                          <li>
+                            <a href="#">
+                              <i className="fab fa-facebook-f"></i>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <i className="fab fa-twitter"></i>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <i className="fab fa-instagram"></i>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <i className="fab fa-behance"></i>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <i className="fab fa-dribbble"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              }
               {/* <!-- Comments Template --> */}
               <div className="comments-template">
                 <h4 className="template-title">People Comments</h4>

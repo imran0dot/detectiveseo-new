@@ -6,7 +6,7 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
 const PostCard = ({ postDetails }) => {
-    const { featured_media, title, date } = postDetails;
+    const { featured_media, title, date, id } = postDetails;
     const { data: image, isLoading, isError } = useGetMediaQuery(featured_media);
 
     const convertDate = dateConvert(date);
@@ -59,7 +59,7 @@ const PostCard = ({ postDetails }) => {
                         </p>
                     </div>
 
-                    <Link href={`/blog-details/${covertTitle}`}>
+                    <Link href={`/blog/${id}`}>
                         <a className="post-read-more">
                             Learn More <i className="fas fa-arrow-right"></i>
                         </a>

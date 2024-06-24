@@ -110,3 +110,7 @@ export const dateConvert = (dateString) => {
 export const titleIntoUrl = (title) => {
   return title?.split(' ').join('-').toLowerCase();
 };
+
+export const UrlToTitle = (url) => {
+  return url?.split('-').join(' ');
+};

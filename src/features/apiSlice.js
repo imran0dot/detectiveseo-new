@@ -9,8 +9,11 @@ export const blogApi = createApi({
     getAllBlog: builder.query({
       query: () => `posts?_fields=id,title,featured_media,date,categories,content`, 
     }),
+    findIdByTitle: builder.query({
+      query: (title) => `/posts?_fields=id}&search=${encodeURIComponent(title)}`,
+    }),
     getBlog: builder.query({
-      query: (post_id) => `posts/${post_id}`,
+      query: (post_id) => `/posts/${post_id}`,
     }),
     getMedia: builder.query({
       query: (media_id) => `/media/${media_id}?_fields=guid`,
@@ -19,4 +22,9 @@ export const blogApi = createApi({
   }),
 });
 
-export const { useGetAllBlogQuery, useGetBlogQuery, useGetMediaQuery } = blogApi;
+export const { 
+  useGetAllBlogQuery, 
+  useGetBlogQuery, 
+  useGetMediaQuery, 
+  useFindIdByTitleQuery 
+} = blogApi;
