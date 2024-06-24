@@ -132,7 +132,7 @@ const BlogDetails = () => {
                     <div className="post-author-box">
                       <div className="author-thumbnail">
                         <img
-                          src="assets/img/blog/author-thumbnail.jpg"
+                          src="public/assets/img/blog/author-thumbnail.jpg"
                           alt="Post Author"
                         />
                       </div>
@@ -184,7 +184,7 @@ const BlogDetails = () => {
                     <div className="comment-body">
                       <div className="avatar">
                         <img
-                          src="assets/img/blog/comment-avatar-1.jpg"
+                          src="public/assets/img/blog/comment-avatar-1.jpg"
                           alt="comment author one"
                         />
                       </div>
@@ -209,7 +209,7 @@ const BlogDetails = () => {
                         <div className="comment-body">
                           <div className="avatar">
                             <img
-                              src="assets/img/blog/comment-avatar-2.jpg"
+                              src="public/assets/img/blog/comment-avatar-2.jpg"
                               alt="comment author two"
                             />
                           </div>
@@ -236,7 +236,7 @@ const BlogDetails = () => {
                     <div className="comment-body">
                       <div className="avatar">
                         <img
-                          src="assets/img/blog/comment-avatar-3.jpg"
+                          src="public/assets/img/blog/comment-avatar-3.jpg"
                           alt="comment author three"
                         />
                       </div>
@@ -359,7 +359,7 @@ const BlogDetails = () => {
                         <Link href="/blog-details">
                           <a>
                             <img
-                              src="assets/img/blog/latest-post-thumbnail-1.jpg"
+                              src="public/assets/img/blog/latest-post-thumbnail-1.jpg"
                               alt="latest post one"
                             />
                           </a>
@@ -381,7 +381,7 @@ const BlogDetails = () => {
                         <Link href="/blog-details">
                           <a>
                             <img
-                              src="assets/img/blog/latest-post-thumbnail-2.jpg"
+                              src="public/assets/img/blog/latest-post-thumbnail-2.jpg"
                               alt="latest post two"
                             />
                           </a>
@@ -403,7 +403,7 @@ const BlogDetails = () => {
                         <Link href="/blog-details">
                           <a>
                             <img
-                              src="assets/img/blog/latest-post-thumbnail-3.jpg"
+                              src="public/assets/img/blog/latest-post-thumbnail-3.jpg"
                               alt="latest post three"
                             />
                           </a>
@@ -436,7 +436,7 @@ const BlogDetails = () => {
 
                       <div className="author">
                         <img
-                          src="assets/img/testimonial/author-1.png"
+                          src="public/assets/img/testimonial/author-1.png"
                           alt="Author"
                         />
                         <h6 className="name">
@@ -454,7 +454,7 @@ const BlogDetails = () => {
 
                       <div className="author">
                         <img
-                          src="assets/img/testimonial/author-2.png"
+                          src="public/assets/img/testimonial/author-2.png"
                           alt="Author"
                         />
                         <h6 className="name">
@@ -473,7 +473,7 @@ const BlogDetails = () => {
 
                       <div className="author">
                         <img
-                          src="assets/img/testimonial/author-3.png"
+                          src="public/assets/img/testimonial/author-3.png"
                           alt="Author"
                         />
                         <h6 className="name">
