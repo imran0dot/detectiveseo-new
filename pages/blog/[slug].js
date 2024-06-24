@@ -13,6 +13,7 @@ import commentAuthor from '../../public/assets/img/blog/author-thumbnail.jpg'
 import commentAvatar1 from '../../public/assets/img/blog/comment-avatar-1.jpg'
 import commentAvatar2 from '../../public/assets/img/blog/comment-avatar-2.jpg'
 import commentAvatar3 from '../../public/assets/img/blog/comment-avatar-3.jpg'
+import Head from "next/head";
 
 // This is the single blog page
 const BlogDetails = () => {
@@ -33,6 +34,9 @@ console.log(commentAuthor);
 
   return (
     <Layouts pageTitle="Blog Details">
+      <Head>
+        <title>DetectiveSEO | Blog | Blog-Details-{getTitlePatchFromPath}</title>
+      </Head>
       <section className="blog-area p-t-130 p-b-130">
         <div className="container">
           <div className="row justify-content-center">
