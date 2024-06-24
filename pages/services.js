@@ -219,7 +219,7 @@ const Services = () => {
                   <li>GMB Profile Setup</li>
                   <li>1 page Website</li>
                   <li>3 social media setup</li>
-                  <li className="disabled-feature">Monthly Support  X</li>
+                  <li className="disabled-feature">Monthly Support</li>
                 </ul>
                 <a href="https://wa.me/8801841129353?text=I'm interested on Single Team Package" className="template-btn">
                   Select Plan <i className="fas fa-arrow-right"></i>
@@ -256,8 +256,8 @@ const Services = () => {
                   <li>GMB Profile setup</li>
                   <li>Complete Website $700</li>
                   <li>maintenance and support</li>
-                  <li className="disabled-feature">Local SEO</li>
-                  <li className="disabled-feature">Google & Facebook Ads</li>
+                  <li className="">Local SEO</li>
+                  <li className="">Google & Facebook Ads</li>
                 </ul>
                 <a href="https://wa.me/8801841129353?text=I'm interested on Professional Package" className="template-btn">
                   Select Plan <i className="fas fa-arrow-right"></i>
@@ -294,8 +294,8 @@ const Services = () => {
                   <li>All in Professional</li>
                   <li>Social media Branding</li>
                   <li>reputation management</li>
-                  <li className="disabled-feature">2 Blog post in a week</li>
-                  <li className="disabled-feature">24/7 Property support</li>
+                  <li className="">2 Blog post in a week</li>
+                  <li className="">24/7 Property support</li>
                 </ul>
                 <a href="https://wa.me/8801841129353?text=I'm interested on Pro - Premium Package" className="template-btn">
                   Select Plan <i className="fas fa-arrow-right"></i>
@@ -308,6 +308,7 @@ const Services = () => {
       </section>
       {/* <!--====== End Pricing Section ======--> */}
 
+      
       <Subscribe />
     </Layouts>
   );

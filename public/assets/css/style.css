@@ -10289,3 +10289,21 @@ textarea {
 .map iframe{
   border: none;
 }
+
+/* contact us live chat btn */
+
+.live-chat-btn{
+  position: fixed;
+  display: flex;
+  justify-items: center !important;
+  align-items: center !important;
+  background-color: #39ff43;
+  border: none !important;
+  padding: 10px;
+  top: 85%;
+  right: 25px;
+  font-size: 25px !important;
+  border-radius: 50px;
+  color: black;
+}
+
