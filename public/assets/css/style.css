@@ -1,5 +1,5 @@
 /*-----------------------------------------------------------------------------------
-    Template Name: Landio - Multipurpose Landing Page HTML Template
+    Template Name: Detective SEO - Clinic
     Template URI: https://webtend.net/demo/html/landio/
     Author: WebTend
     Author URI:  https://webtend.net/
@@ -163,6 +163,7 @@
 :root {
   --color-primary: #473bf0;
   --color-primary-2: #0040e5;
+
   --color-primary-3: #e95e6c;
   --color-primary-4: #3377ff;
   --color-primary-5: #5580ff;
@@ -219,6 +220,8 @@ img {
   -webkit-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
 }
+
+
 
 .slick-slide img {
   display: inline-block;
@@ -1561,7 +1564,7 @@ textarea {
   width: 55px;
   padding: 10px;
   font-size: 0;
-  border: 2px solid var(--color-heading);
+  /* border: 2px solid var(--color-heading); */
   border-radius: 5px;
 }
 
@@ -1573,6 +1576,7 @@ textarea {
 
 .template-header .navbar-toggler span:nth-child(2) {
   margin: 6px 0;
+  width: 20px;
 }
 
 .template-header.navbar-right .nav-menu ul > li:last-child {
@@ -8984,6 +8988,8 @@ textarea {
 .blog-details-content .post-thumbnail img {
   -webkit-transition: 0.3s;
   transition: 0.3s;
+    width: 100%;
+    object-fit: cover;
 }
 
 .blog-details-content .post-title {

@@ -7,28 +7,36 @@ import { testimonialwidgetactive } from "../src/sliderProps";
 import { getPagination, pagination } from "../src/utils";
 import { axiosInstace } from "../src/utils";
 import PostCard from "../src/components/PostCard";
+import Head from "next/head";
+import { useGetAllBlogQuery } from "../src/features/apiSlice";
+import PostCardSkeleton from "../src/components/PorstCardSkeleton";
+
 
 const BlogStandard = () => {
   let sort = 2;
   const [active, setActive] = useState(1);
   const [state, setstate] = useState([]);
-  const [blogs, setBlogs] = useState([]);
+
+  const { data: blogs, error, isLoading } = useGetAllBlogQuery();
+
+
   useEffect(() => {
     pagination(".single-blog-post", sort, active);
     let list = document.querySelectorAll(".single-blog-post");
     setstate(getPagination(list.length, sort));
+
   }, [active]);
 
-  useEffect(()=>{
-    axiosInstace.get('/posts')
-      .then(res => {
-        const result = res.data;
-        setBlogs(result);
-      })
-  },[])
+
+
 
   return (
     <Layouts pageTitle="Blog Standard">
+
+      <Head>
+          <title>DetectiveSEO | Blog</title>
+      </Head>
+
       <section className="blog-area p-t-130 p-b-130">
         <div className="container">
           <div className="row justify-content-center">
@@ -36,6 +44,7 @@ const BlogStandard = () => {
             <div className="col-lg-8">
               <div className="blog-post-items p-r-40 p-r-lg-0">
                 {
+                  isLoading? <PostCardSkeleton /> :
                   blogs.map(blog => <PostCard postDetails={blog} key={blog?.id}  />)
                 }
               </div>

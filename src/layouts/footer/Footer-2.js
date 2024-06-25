@@ -153,12 +153,13 @@ const Footer2 = ({ extraClass }) => {
           <div className="row align-items-center justify-content-between">
             <div className="col-sm-auto col-12">
               <div className="copyright-logo text-center text-sm-left">
-                <img src="assets/img/logo-white-2.png" alt="Landio" />
+                {/* <img src="assets/img/logo-white-2.png" alt="Landio" /> */}
+                Detective <span className="nav-text-symbol">SEO</span>
               </div>
             </div>
             <div className="col-sm-auto col-12">
               <p className="copyright-text text-center text-sm-right pt-4 pt-sm-0">
-                © 2021 <a href="#">Landio</a>. All Rights Reserved
+                © 2021 <a href="#">Detective SEO</a>. All Rights Reserved
               </p>
             </div>
           </div>

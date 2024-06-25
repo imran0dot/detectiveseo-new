@@ -2,10 +2,16 @@ import Link from "next/link";
 import AccordionV1 from "../src/components/AccordionV1";
 import Subscribe from "../src/components/Subscribe";
 import Layouts from "../src/layouts/Layouts";
+import Head from "next/head";
 
 const Services = () => {
   return (
     <Layouts pageTitle="Our Services">
+      <div>
+        <Head>
+          <title>DetectiveSEO | Service</title>
+        </Head>
+      </div>
       {/* <!--====== Service Section Start ======--> */}
       <section className="service-section p-t-130 p-b-100">
         <div className="container">
@@ -15,7 +21,7 @@ const Services = () => {
               <div className="fancy-icon-box m-b-30">
                 <div className="box-icon">
                   <i className="flaticon-goal-1"></i>
-                  
+
                 </div>
                 <div className="box-content">
                   <h4 className="title">
@@ -140,7 +146,7 @@ const Services = () => {
                       <span className="ml-3">50 new patients x $1,000 each = $50,000</span></li>
                   </ol>
                 </div>
-                
+
                 <div className="mb-3">
                   <p>Our marketing fees for physio clinics typically range from $3,000 - $6,000 per month based on the scope of services.</p>
                   <ol className="list-group list-group-number">
@@ -181,6 +187,8 @@ const Services = () => {
 
           {/* <!-- Pricing Table --> */}
           <div className="row justify-content-center">
+
+
             <div
               className="col-lg-4 col-md-6 col-sm-8 wow fadeInUp"
               data-wow-delay="0.3s"
@@ -213,11 +221,12 @@ const Services = () => {
                   <li>3 social media setup</li>
                   <li className="disabled-feature">Monthly Support  X</li>
                 </ul>
-                <a href="#" className="template-btn">
+                <a href="https://wa.me/8801841129353?text=I'm interested on Single Team Package" className="template-btn">
                   Select Plan <i className="fas fa-arrow-right"></i>
                 </a>
               </div>
             </div>
+
             <div
               className="col-lg-4 col-md-6 col-sm-8 wow fadeInUp"
               data-wow-delay="0.4s"
@@ -250,11 +259,12 @@ const Services = () => {
                   <li className="disabled-feature">Local SEO</li>
                   <li className="disabled-feature">Google & Facebook Ads</li>
                 </ul>
-                <a href="#" className="template-btn">
+                <a href="https://wa.me/8801841129353?text=I'm interested on Professional Package" className="template-btn">
                   Select Plan <i className="fas fa-arrow-right"></i>
                 </a>
               </div>
             </div>
+
             <div
               className="col-lg-4 col-md-6 col-sm-8 wow fadeInUp"
               data-wow-delay="0.5s"
@@ -287,11 +297,12 @@ const Services = () => {
                   <li className="disabled-feature">2 Blog post in a week</li>
                   <li className="disabled-feature">24/7 Property support</li>
                 </ul>
-                <a href="#" className="template-btn">
+                <a href="https://wa.me/8801841129353?text=I'm interested on Pro - Premium Package" className="template-btn">
                   Select Plan <i className="fas fa-arrow-right"></i>
                 </a>
               </div>
             </div>
+
           </div>
         </div>
       </section>

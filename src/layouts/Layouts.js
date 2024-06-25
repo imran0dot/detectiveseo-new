@@ -24,7 +24,7 @@ const Layouts = ({ noHeader, noFooter, pageTitle, children }) => {
       <Head>
         <link
           rel="shortcut icon"
-          href="assets/img/favicon.png"
+          href="assets/img/detectiveFav.png"
           type="img/png"
         />
         <title>Landio - Multipurpose Landing Page React Nextjs Template</title>

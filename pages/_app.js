@@ -1,7 +1,9 @@
 import { Fragment, useEffect, useState } from "react";
 import PreLoader from "../src/layouts/PreLoader";
-import "../styles/globals.css"
+import "../styles/globals.css";
 
+import { store } from '../src/store'
+import { Provider } from 'react-redux'
 
 function MyApp({ Component, pageProps }) {
   // const [loader, setLoader] = useState(true);
@@ -13,7 +15,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <Fragment>
       {/* {loader && <PreLoader />} */}
-      <Component {...pageProps} />
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
     </Fragment>
   );
 }

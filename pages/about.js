@@ -1,9 +1,13 @@
+import Head from "next/head";
 import Counter from "../src/components/Counter";
 import Layouts from "../src/layouts/Layouts";
 
 const About = () => {
   return (
     <Layouts pageTitle="About Company">
+      <Head>
+          <title>DetectiveSEO | About Us</title>
+        </Head>
       <section className="about-us-area p-t-30 p-b-100 border-bottom-primary">
         <div className="container">
           <div className="row justify-content-center">

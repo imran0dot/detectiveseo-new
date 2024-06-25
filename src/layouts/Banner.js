@@ -1,6 +1,11 @@
 import Link from "next/link";
-
+import particleOne from '../../public/assets/img/particle/particle-1.png';
+import particleTwo from '../../public/assets/img/particle/particle-2.png';
+import particleThree from '../../public/assets/img/particle/particle-3.png';
+import particleFour from '../../public/assets/img/particle/particle-4.png';
+import particleFive from '../../public/assets/img/particle/particle-5.png';
 const Banner = ({ pageName }) => {
+
   return (
     <section className="page-title-area">
       <div className="container">
@@ -18,27 +23,27 @@ const Banner = ({ pageName }) => {
       <div className="page-title-effect d-none d-md-block">
         <img
           className="particle-1 animate-zoom-fade"
-          src="assets/img/particle/particle-1.png"
+          src={particleOne?.src}
           alt="particle One"
         />
         <img
           className="particle-2 animate-rotate-me"
-          src="assets/img/particle/particle-2.png"
+          src={particleTwo?.src}
           alt="particle Two"
         />
         <img
           className="particle-3 animate-float-bob-x"
-          src="assets/img/particle/particle-3.png"
+          src={particleThree?.src}
           alt="particle Three"
         />
         <img
           className="particle-4 animate-float-bob-y"
-          src="assets/img/particle/particle-4.png"
+          src={particleFour?.src}
           alt="particle Four"
         />
         <img
           className="particle-5 animate-float-bob-y"
-          src="assets/img/particle/particle-5.png"
+          src={particleFive?.src}
           alt="particle Five"
         />
       </div>
