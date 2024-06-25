@@ -5,7 +5,7 @@ import Layouts from "../../src/layouts/Layouts";
 import { testimonialwidgetactive } from "../../src/sliderProps";
 import { useFindIdByTitleQuery, useGetBlogQuery, useGetMediaQuery } from "../../src/features/apiSlice";
 import { useRouter } from "next/dist/client/router";
-import { UrlToTitle } from "../../src/utils";
+import { UrlToTitle, dateConvert } from "../../src/utils";
 import BlogDetailsSkeleton from "../../src/components/BlogDetailsSkeleton";
 
 // Comment Related
@@ -17,7 +17,7 @@ import Head from "next/head";
 
 // This is the single blog page
 const BlogDetails = () => {
-console.log(commentAuthor);
+  console.log(commentAuthor);
   // find id using url 
   const { asPath } = useRouter();
   const getTitlePatchFromPath = asPath.split('/')[2];
@@ -30,7 +30,12 @@ console.log(commentAuthor);
   const { data, isLoading, isError } = useGetBlogQuery(getTitlePatchFromPath);
 
   console.log(data);
+
   const { data: image, isLoading: imageLoading, isError: imageError } = useGetMediaQuery(data?.featured_media);
+
+  console.log(image);
+
+  const convertDate = dateConvert(data?.date);
 
   return (
     <Layouts pageTitle="Blog Details">
@@ -55,12 +60,12 @@ console.log(commentAuthor);
                     <ul className="post-meta">
                       <li>
                         <a href="#" className="post-meta">
-                          <i className="far fa-user"></i>Nichel Jhon
+                          <i className="far fa-user"></i>DetectiveSEO
                         </a>
                       </li>
                       <li>
                         <a href="#" className="post-meta">
-                          <i className="far fa-calendar-alt"></i>25 May 2021
+                          <i className="far fa-calendar-alt"></i>{convertDate}
                         </a>{" "}
                       </li>
                       <li>
