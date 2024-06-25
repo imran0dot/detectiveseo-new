@@ -6,8 +6,8 @@ const About = () => {
   return (
     <Layouts pageTitle="About Company">
       <Head>
-          <title>DetectiveSEO | About Us</title>
-        </Head>
+        <title>DetectiveSEO | About Us</title>
+      </Head>
       <section className="about-us-area p-t-30 p-b-100 border-bottom-primary">
         <div className="container">
           <div className="row justify-content-center">
@@ -43,7 +43,11 @@ const About = () => {
                   <span className="tagline">About US</span>
                 </div>
                 <p>
-                  Welcome to Detective SEO, your premier partner in website design and local SEO services tailored specifically for the healthcare industry. We understand the unique challenges and opportunities within the healthcare sector, and our mission is to help your practice stand out in an increasingly digital world. With our expert team of designers and SEO specialists, we create visually appealing, user-friendly websites that not only attract but also retain patients. Our local SEO strategies are meticulously crafted to improve your online visibility, ensuring that potential patients in your community can easily find and trust your services. At Detective SEO, we are dedicated to boosting your online presence and driving measurable growth for your healthcare practice.
+                  Welcome to Detective SEO, your premier partner in website design and local SEO services tailored specifically for the healthcare industry. We understand the unique challenges and opportunities within the healthcare sector, and our mission is to help your practice stand out in an increasingly digital world.
+                  <br /> 
+                  <span style={{margin:"10px 0px"}}>With our expert team of designers and SEO specialists, we create visually appealing, user-friendly websites that not only attract but also retain patients. </span>
+                  <br />
+                  Our local SEO strategies are meticulously crafted to improve your online visibility, ensuring that potential patients in your community can easily find and trust your services. At Detective SEO, we are dedicated to boosting your online presence and driving measurable growth for your healthcare practice.
                 </p>
               </div>
             </div>
@@ -133,7 +137,7 @@ const About = () => {
           </div>
 
           <div className="row team-members">
-            <div className="col-xl-3 col-lg-4 col-sm-6">
+            <div className="col-xl-4 col-lg-4 col-sm-6">
               <div className="member-box m-b-30">
                 <div className="member-photo">
                   <img src="assets/img/team/member-1.jpg" alt="Member Photo" />
@@ -168,7 +172,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="col-xl-3 col-lg-4 col-sm-6">
+            <div className="col-xl-4 col-lg-4 col-sm-6">
               <div className="member-box m-b-30">
                 <div className="member-photo">
                   <img src="assets/img/team/member-2.jpg" alt="Member Photo" />
@@ -203,7 +207,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="col-xl-3 col-lg-4 col-sm-6">
+            <div className="col-xl-4 col-lg-4 col-sm-6">
               <div className="member-box m-b-30">
                 <div className="member-photo">
                   <img src="assets/img/team/member-3.jpg" alt="Member Photo" />
@@ -238,7 +242,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="col-xl-3 col-lg-4 col-sm-6">
+            <div className="col-xl-4 col-lg-4 col-sm-6">
               <div className="member-box m-b-30">
                 <div className="member-photo">
                   <img src="assets/img/team/member-4.jpg" alt="Member Photo" />
@@ -273,7 +277,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="col-xl-3 col-lg-4 col-sm-6">
+            <div className="col-xl-4 col-lg-4 col-sm-6">
               <div className="member-box m-b-30">
                 <div className="member-photo">
                   <img src="assets/img/team/member-5.jpg" alt="Member Photo" />
@@ -308,7 +312,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="col-xl-3 col-lg-4 col-sm-6">
+            <div className="col-xl-4 col-lg-4 col-sm-6">
               <div className="member-box m-b-30">
                 <div className="member-photo">
                   <img src="assets/img/team/member-6.jpg" alt="Member Photo" />
@@ -343,7 +347,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="col-xl-3 col-lg-4 col-sm-6">
+            {/* <div className="col-xl-4 col-lg-4 col-sm-6">
               <div className="member-box m-b-30">
                 <div className="member-photo">
                   <img src="assets/img/team/member-7.jpg" alt="Member Photo" />
@@ -378,7 +382,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="col-xl-3 col-lg-4 col-sm-6">
+            <div className="col-xl-4 col-lg-4 col-sm-6">
               <div className="member-box m-b-30">
                 <div className="member-photo">
                   <img src="assets/img/team/member-8.jpg" alt="Member Photo" />
@@ -412,7 +416,7 @@ const About = () => {
                   </ul>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

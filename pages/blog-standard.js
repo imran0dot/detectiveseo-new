@@ -31,7 +31,7 @@ const BlogStandard = () => {
 
 
   return (
-    <Layouts pageTitle="Blog Standard">
+    <Layouts pageTitle="Blog">
 
       <Head>
           <title>DetectiveSEO | Blog</title>
@@ -45,7 +45,7 @@ const BlogStandard = () => {
               <div className="blog-post-items p-r-40 p-r-lg-0">
                 {
                   isLoading? <PostCardSkeleton /> :
-                  blogs.map(blog => <PostCard postDetails={blog} key={blog?.id}  />)
+                  blogs?.map(blog => <PostCard postDetails={blog} key={blog?.id}  />)
                 }
               </div>
 
@@ -62,7 +62,7 @@ const BlogStandard = () => {
                   </a>
                 </li>
                 {state &&
-                  state.map((s, i) => (
+                  state?.map((s, i) => (
                     <li key={i}>
                       <a
                         className={` ${active === s ? "active" : ""}`}
@@ -94,7 +94,7 @@ const BlogStandard = () => {
 
             {/* Start Side-bar */}
 
-            <div className="col-lg-4">
+            {/* <div className="col-lg-4">
               <div className="blog-sidebar m-t-md-80">
                 <div className="widget search-widget">
                   <h4>Search Here</h4>
@@ -279,7 +279,7 @@ const BlogStandard = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

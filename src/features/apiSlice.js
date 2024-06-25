@@ -18,6 +18,10 @@ export const blogApi = createApi({
     getMedia: builder.query({
       query: (media_id) => `/media/${media_id}?_fields=guid`,
       transformResponse: (response) => response.guid.rendered
+    }),
+    getMahin: builder.query({
+      query: () => `posts?_fields=id,title,featured_media,date,categories,content`,
+
     })
   }),
 });
@@ -26,5 +30,7 @@ export const {
   useGetAllBlogQuery, 
   useGetBlogQuery, 
   useGetMediaQuery, 
-  useFindIdByTitleQuery 
+  useFindIdByTitleQuery,
+  use
+
 } = blogApi;

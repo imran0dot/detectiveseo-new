@@ -87,7 +87,7 @@ const Demos = () => (
   Blog = () => (
     <Fragment>
       <li>
-        <Link href="/blog-standard">Blog Standard</Link>
+        <Link href="/blog-standard">Blog</Link>
       </li>
       <li>
         <Link href="/blog-details">Blog Details</Link>

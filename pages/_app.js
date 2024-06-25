@@ -3,7 +3,8 @@ import PreLoader from "../src/layouts/PreLoader";
 import "../styles/globals.css";
 
 import { store } from '../src/store'
-import { Provider } from 'react-redux'
+import { Provider } from "react-redux";
+// import { Provider } from 'react-redux'
 
 function MyApp({ Component, pageProps }) {
   // const [loader, setLoader] = useState(true);

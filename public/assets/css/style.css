@@ -10284,3 +10284,78 @@ textarea {
   color: var(--color-primary);
 }
 /*# sourceMappingURL=style.css.map */
+
+
+.map iframe{
+  border: none;
+}
+
+/* contact us live chat btn */
+
+.live-chat-btn{
+  position: fixed;
+  display: flex;
+  justify-items: center !important;
+  align-items: center !important;
+  background-color: #39ff43;
+  border: none !important;
+  padding: 10px;
+  top: 85%;
+  right: 25px;
+  font-size: 25px !important;
+  border-radius: 50px;
+  color: black;
+}
+
+.marketing-container{
+  width: 80%;
+  margin: 0% auto !important;
+  padding: 50px;
+}
+
+.marketing-content{
+  width: 80%;
+  margin: 0% auto !important;
+  padding: 50px;
+  color: black;
+}
+.marketing-content p{
+  margin: 10px auto;
+}
+.marketing-content ul{
+  list-style: circle;
+  font-size: 18px;
+  padding: 15px;
+}
+
+
+/* home marketing form */
+
+.marketing-form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.marketing-form input , textarea{
+  border: 1px solid #473bf077;
+  border-radius: 10px;
+}
+
+.submit-btn{
+  width: 50%;
+  margin: 0% auto;
+  border: none !important;
+  padding: 5px 25px !important;
+  color: white;
+  font-weight: 550 !important;
+  background-color: #473bf0;
+  border-radius: 50px !important;
+  transition: all 0.5s ease;
+}
+
+.submit-btn:hover{
+  background-color: black;
+}

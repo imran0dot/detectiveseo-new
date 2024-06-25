@@ -11,6 +11,7 @@ const Index = () => {
 
       <Head>
         <title>DetectiveSEO | Home</title>
+
       </Head>
 
       <section className="hero-area-v1">
@@ -72,8 +73,27 @@ const Index = () => {
           </div>
         </div>
         <div className="container-fluid">
-          <div className="hero-img text-center animate-float-bob-y">
+          {/* <div className="hero-img text-center animate-float-bob-y">
             <img src="assets/img/hero/app-dashboard.jpg" alt="image" />
+          </div> */}
+          <div className="row g-5 marketing-container">
+            <div className="col-lg-5 marketing-content">
+              <h1>Stop Overpaying For Your Clinic Website & Marketing</h1>
+              <p>Thousands of Clinic Owners rely on our powerful websites and marketing services to:</p>
+              <ul>
+                <li>Acquire more profitable patients</li>
+                <li>Improve your online reputation</li>
+                <li>Increase patient retention & reduce no-shows</li>
+              </ul>
+            </div>
+            <div className="col-lg-5 marketing-form-container">
+              <form className="marketing-form">
+                <input type="text" name="name" id="name" placeholder="Your Name *" />
+                <input type="text" name="email" id="email" placeholder="Your Email *" />
+                <textarea name="message" id="message" rows={5} placeholder="Your Message:"></textarea>
+                <input type="submit" value="Chat With A Specialist" className="submit-btn" />
+              </form>
+            </div>
           </div>
         </div>
       </section>
@@ -141,7 +161,7 @@ const Index = () => {
                   <li>Rising costs making it hard to make ends meet</li>
                   <li>Your services not getting paid properly</li>
                 </ul>
-                
+
               </div>
             </div>
           </div>
@@ -391,7 +411,7 @@ const Index = () => {
                   <a href="#" className="py-2 px-5 rounded rounded-4 bg-primary text-white fw-bold fs-1">
                     Get the Check List <i className="far fa-arrow-right ml-2"></i>
                   </a>
-                  <a href="https://wa.me/8801841129353"  className="text-dark border border-primary py-2 px-5 rounded rounded-4">
+                  <a href="https://wa.me/8801841129353" className="text-dark border border-primary py-2 px-5 rounded rounded-4">
                     Live Chat <i className="far fa-arrow-right ml-2"></i>
                   </a>
                 </div>
@@ -400,11 +420,11 @@ const Index = () => {
 
             </div>
             <div className="col-lg-5 col-md-11">
-                <img
-                  src="assets/img/preview-gallery/Checklist.png"
-                  className="animate-float-bob-y"
-                  alt="Image"
-                />
+              <img
+                src="assets/img/preview-gallery/Checklist.png"
+                className="animate-float-bob-y"
+                alt="Image"
+              />
             </div>
           </div>
         </div>

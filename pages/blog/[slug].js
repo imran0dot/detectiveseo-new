@@ -7,9 +7,17 @@ import { useFindIdByTitleQuery, useGetBlogQuery, useGetMediaQuery } from "../../
 import { useRouter } from "next/dist/client/router";
 import { UrlToTitle } from "../../src/utils";
 import BlogDetailsSkeleton from "../../src/components/BlogDetailsSkeleton";
+
+// Comment Related
+import commentAuthor from '../../public/assets/img/blog/author-thumbnail.jpg'
+import commentAvatar1 from '../../public/assets/img/blog/comment-avatar-1.jpg'
+import commentAvatar2 from '../../public/assets/img/blog/comment-avatar-2.jpg'
+import commentAvatar3 from '../../public/assets/img/blog/comment-avatar-3.jpg'
+import Head from "next/head";
+
 // This is the single blog page
 const BlogDetails = () => {
-
+console.log(commentAuthor);
   // find id using url 
   const { asPath } = useRouter();
   const getTitlePatchFromPath = asPath.split('/')[2];
@@ -26,6 +34,9 @@ const BlogDetails = () => {
 
   return (
     <Layouts pageTitle="Blog Details">
+      <Head>
+        <title>DetectiveSEO | Blog | Blog-Details-{getTitlePatchFromPath}</title>
+      </Head>
       <section className="blog-area p-t-130 p-b-130">
         <div className="container">
           <div className="row justify-content-center">
@@ -65,19 +76,19 @@ const BlogDetails = () => {
                     <div dangerouslySetInnerHTML={{ __html: data ? data?.content?.rendered : '' }}></div>
 
 
-                    <blockquote className="blockquote">
+                    {/* <blockquote className="blockquote">
                       <p>
                         Combinin Graphica And Voice Interfaces For Better User
                         Experience Deceive Avoiding Bias
                       </p>
                       <cite>Bailey Dobson</cite>
-                    </blockquote>
+                    </blockquote> */}
 
-                    <h4 className="post-subtitle">
+                    {/* <h4 className="post-subtitle">
                       Ensure Your Design System Achieve
-                    </h4>
+                    </h4> */}
 
-                    <p>
+                    {/* <p>
                       No one rejects, dislikes, or avoids pleasure itself, because
                       it is pleasure, but because those who do not know how to
                       pursue pleasure rationally encounter consequences that
@@ -85,12 +96,13 @@ const BlogDetails = () => {
                       pursues or desires to obtain pain of itself, because it is
                       pain, but because occasionally circumstances occur in which
                       toil and pain can procure him some great pleasure.
-                    </p>
+                    </p> */}
                   </div>
 
 
                   <div className="post-footer m-t-40">
-                    <ul className="related-tags">
+                    {/* Tags */}
+                    {/* <ul className="related-tags">
                       <li className="item-heading">Related Tags: </li>
                       <li>
                         <a href="#">Landing</a>
@@ -104,7 +116,9 @@ const BlogDetails = () => {
                       <li>
                         <a href="#">Mobile Apps</a>
                       </li>
-                    </ul>
+                    </ul> */}
+
+                    {/* Share */}
                     <ul className="social-links">
                       <li className="item-heading">Share :</li>
                       <li>
@@ -132,7 +146,7 @@ const BlogDetails = () => {
                     <div className="post-author-box">
                       <div className="author-thumbnail">
                         <img
-                          src="public/assets/img/blog/author-thumbnail.jpg"
+                          src={commentAuthor?.src}
                           alt="Post Author"
                         />
                       </div>
@@ -184,7 +198,7 @@ const BlogDetails = () => {
                     <div className="comment-body">
                       <div className="avatar">
                         <img
-                          src="public/assets/img/blog/comment-avatar-1.jpg"
+                          src={commentAvatar1?.src}
                           alt="comment author one"
                         />
                       </div>
@@ -209,7 +223,7 @@ const BlogDetails = () => {
                         <div className="comment-body">
                           <div className="avatar">
                             <img
-                              src="public/assets/img/blog/comment-avatar-2.jpg"
+                              src={commentAvatar2?.src}
                               alt="comment author two"
                             />
                           </div>
@@ -236,7 +250,7 @@ const BlogDetails = () => {
                     <div className="comment-body">
                       <div className="avatar">
                         <img
-                          src="public/assets/img/blog/comment-avatar-3.jpg"
+                          src={commentAvatar3?.src}
                           alt="comment author three"
                         />
                       </div>
@@ -313,7 +327,7 @@ const BlogDetails = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-4">
+            {/* <div className="col-lg-4">
               <div className="blog-sidebar m-t-md-80">
                 <div className="widget search-widget">
                   <h4>Search Here</h4>
@@ -498,7 +512,7 @@ const BlogDetails = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
