@@ -10374,3 +10374,8 @@ textarea {
   font-size: 15px;
   margin: 10px 0px;
 }
+
+.terms-container ul li span{
+  color: #473bf0;
+  font-weight: 600;
+}
