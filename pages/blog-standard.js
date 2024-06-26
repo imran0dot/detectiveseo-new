@@ -17,7 +17,7 @@ const BlogStandard = () => {
   const [active, setActive] = useState(1);
   const [state, setstate] = useState([]);
 
-  const { data: blogs, error, isLoading } = useGetAllBlogQuery();
+  const { data: blogs, error, isError, isLoading } = useGetAllBlogQuery();
 
 
   useEffect(() => {
@@ -27,6 +27,50 @@ const BlogStandard = () => {
 
   }, [active]);
 
+  let content = <></>
+
+  if (blogs?.length && !isError && !isLoading) {
+    content = blogs?.map(blog => <PostCard postDetails={blog} key={blog?.id} />)
+  };
+
+  if (blogs?.length < 0 && !isError && !isLoading) {
+    content =
+      <div
+        className="error-page-content p-t-80 wow fadeInUp"
+        data-wow-delay="0.2s"
+        data-wow-duration="1500ms"
+      >
+        <h2>OPPS!</h2>
+        <p>No Post Found</p>
+        <Link href="/">
+          <a className="template-btn m-t-35">
+            Back To Home <i className="fas fa-arrow-right"></i>
+          </a>
+        </Link>
+      </div>
+  };
+
+  if (!blogs?.length && isError && !isLoading) {
+    content =
+      <div
+        className="error-page-content p-t-80 wow fadeInUp text-center"
+        data-wow-delay="0.2s"
+        data-wow-duration="1500ms"
+      >
+        <h2>OPPS!</h2>
+        <p>Something went wrong!</p>
+        <Link href="/">
+          <a className="template-btn m-t-35">
+            Back To Home <i className="fas fa-arrow-right"></i>
+          </a>
+        </Link>
+      </div>
+  };
+
+  if (isLoading) {
+    content = <PostCardSkeleton />
+  };
+
 
 
 
@@ -34,7 +78,7 @@ const BlogStandard = () => {
     <Layouts pageTitle="Blog">
 
       <Head>
-          <title>DetectiveSEO | Blog</title>
+        <title>DetectiveSEO | Blog</title>
       </Head>
 
       <section className="blog-area p-t-130 p-b-130">
@@ -43,12 +87,11 @@ const BlogStandard = () => {
 
             <div className="col-lg-8">
               <div className="blog-post-items p-r-40 p-r-lg-0">
-                {
-                  isLoading? <PostCardSkeleton /> :
-                  blogs?.map(blog => <PostCard postDetails={blog} key={blog?.id}  />)
-                }
+                {content}
               </div>
 
+
+              {/* post pagination  */}
               <ul className="post-pagination">
                 <li>
                   <a
@@ -90,6 +133,7 @@ const BlogStandard = () => {
                   </a>
                 </li>
               </ul>
+
             </div>
 
             {/* Start Side-bar */}

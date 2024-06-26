@@ -4,7 +4,6 @@ import particle4 from '../../public/assets/img/particle/particle-4.png'
 import particle5 from '../../public/assets/img/particle/particle-5.png'
 import newsLatterBg from '../../public/assets/img/particle/newsletter-bg.png'
 const Subscribe = () => {
-  console.log(particle2);
   return (
     <section
       className="newsletter-area bg-cover-center bg-soft-grey-color p-t-130 p-b-130"
