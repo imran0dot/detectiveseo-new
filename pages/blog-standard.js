@@ -15,16 +15,16 @@ import PostCardSkeleton from "../src/components/PorstCardSkeleton";
 const BlogStandard = () => {
   let sort = 2;
   const [active, setActive] = useState(1);
-  const [state, setstate] = useState([]);
+  const [state, setState] = useState([0, 0]);
 
   const { data: blogs, error, isError, isLoading } = useGetAllBlogQuery();
 
 
-  useEffect(() => {
-    pagination(".single-blog-post", sort, active);
-    let list = document.querySelectorAll(".single-blog-post");
-    setstate(getPagination(list.length, sort));
 
+  useEffect(() => {
+    let list = document.querySelectorAll(".single-blog-post");
+    pagination(".single-blog-post", sort, active);
+    setState(getPagination(list?.length, sort));
   }, [active]);
 
   let content = <></>
@@ -70,7 +70,6 @@ const BlogStandard = () => {
   if (isLoading) {
     content = <PostCardSkeleton />
   };
-
 
 
 

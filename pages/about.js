@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Counter from "../src/components/Counter";
 import Layouts from "../src/layouts/Layouts";
 
 const About = () => {

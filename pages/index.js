@@ -76,25 +76,55 @@ const Index = () => {
           {/* <div className="hero-img text-center animate-float-bob-y">
             <img src="assets/img/hero/app-dashboard.jpg" alt="image" />
           </div> */}
-          <div className="row g-5 marketing-container">
-            <div className="col-lg-5 marketing-content">
-              <h1>Stop Overpaying For Your Clinic Website & Marketing</h1>
-              <p>Thousands of Clinic Owners rely on our powerful websites and marketing services to:</p>
-              <ul>
-                <li>Acquire more profitable patients</li>
-                <li>Improve your online reputation</li>
-                <li>Increase patient retention & reduce no-shows</li>
-              </ul>
+          <section className="blog-area p-t-130 p-b-130">
+            <div className="container">
+              <div className="row justify-content-lg-start justify-content-center">
+                <div className="col-lg-5 col-md-8">
+                  <div className="analysis-text-block p-l-50 p-l-md-0">
+                    <div className="common-heading tagline-boxed m-b-30">
+                      {/* <span className="tagline">CLINIC OWNERS</span> */}
+                      {/* <h2 className="title">Manage your data analysis easily</h2> */}
+                    </div>
+                    <h2>
+                      Stop Overpaying For Your Clinic Website & Marketing
+                    </h2>
+                    <p>Thousands of chiropractors rely on our powerful websites and marketing services to:</p>
+                    <ul className="check-list m-t-30">
+                      <li>Acquire more profitable patients</li>
+                      <li>Improve your online reputation</li>
+                      <li>Increase patient retention & reduce no-shows</li>
+                    </ul>
+
+                  </div>
+                </div>
+                <div className="col-lg-5 offset-xl-1 col-md-10">
+                  <div className="contact-form-area m-t-md-100">
+                    
+                    <div className="contact-form-v2">
+                      <form>
+                        <div className="input-field m-b-30">
+                          <input type="text" id="fullName" placeholder="Full Name" name="name" required="" className="" />
+                          <label htmlFor="fullName">Name</label>
+                        </div>
+
+                        <div className="input-field m-b-30">
+                          <input type="email" id="emailAddress" placeholder="Email Address" name="email" required="" />
+                          <label htmlFor="emailAddress">Email</label>
+                        </div>
+                        
+                        <div className="input-field textarea-field m-b-30">
+                          <textarea id="message" placeholder="Message" name="message" style={{height:"150px"}}></textarea>
+                        </div>
+                        <div className="input-field">
+                          <button type="submit" className="template-btn" >Chat With A Specialist <i className="fas fa-arrow-right"></i></button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="col-lg-5 marketing-form-container">
-              <form className="marketing-form">
-                <input type="text" name="name" id="name" placeholder="Your Name *" />
-                <input type="text" name="email" id="email" placeholder="Your Email *" />
-                <textarea name="message" id="message" rows={5} placeholder="Your Message:"></textarea>
-                <input type="submit" value="Chat With A Specialist" className="submit-btn" />
-              </form>
-            </div>
-          </div>
+          </section>
         </div>
       </section>
       {/* <!--====== End Hero Area Updated ======--> */}

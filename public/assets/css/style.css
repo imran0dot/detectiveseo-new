@@ -10359,3 +10359,23 @@ textarea {
 .submit-btn:hover{
   background-color: black;
 }
+
+
+
+.terms-container h4{
+  margin: 10px 0px;
+}
+
+.terms-container ul{
+  padding: 0px 30px;
+  color: black;
+  list-style: circle;
+  list-style-type: disc;
+  font-size: 15px;
+  margin: 10px 0px;
+}
+
+.terms-container ul li span{
+  color: #473bf0;
+  font-weight: 600;
+}
