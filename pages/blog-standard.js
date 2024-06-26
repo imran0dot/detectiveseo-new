@@ -15,26 +15,25 @@ import PostCardSkeleton from "../src/components/PorstCardSkeleton";
 const BlogStandard = () => {
   let sort = 2;
   const [active, setActive] = useState(1);
-  const [state, setstate] = useState([]);
+  const [state, setState] = useState([0, 0]);
 
   const { data: blogs, error, isLoading } = useGetAllBlogQuery();
 
 
-  useEffect(() => {
-    pagination(".single-blog-post", sort, active);
-    let list = document.querySelectorAll(".single-blog-post");
-    setstate(getPagination(list.length, sort));
 
+  useEffect(() => {
+    let list = document.querySelectorAll(".single-blog-post");
+    pagination(".single-blog-post", sort, active);
+    setState(getPagination(list?.length, sort));
   }, [active]);
 
-
-
+  console.log(blogs);
 
   return (
     <Layouts pageTitle="Blog">
 
       <Head>
-          <title>DetectiveSEO | Blog</title>
+        <title>DetectiveSEO | Blog</title>
       </Head>
 
       <section className="blog-area p-t-130 p-b-130">
@@ -44,8 +43,8 @@ const BlogStandard = () => {
             <div className="col-lg-8">
               <div className="blog-post-items p-r-40 p-r-lg-0">
                 {
-                  isLoading? <PostCardSkeleton /> :
-                  blogs?.map(blog => <PostCard postDetails={blog} key={blog?.id}  />)
+                  isLoading ? <PostCardSkeleton /> :
+                    blogs?.map(blog => <PostCard postDetails={blog} key={blog?.id} />)
                 }
               </div>
 
