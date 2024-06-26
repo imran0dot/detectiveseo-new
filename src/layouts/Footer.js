@@ -124,8 +124,8 @@ const Footer = () => {
                 <Link href="/">
                     <a className="nav-text">
                       {/* TODO  */}
-                      {/* <img src="assets/img/logo-1.png" alt="logo" /> */}
-                      Detective <span className="nav-text-symbol">SEO</span>
+                      <img src="assets/img/detectiveseo.png" alt="logo" width={250} />
+                      
                     </a>
                   </Link>
               </div>

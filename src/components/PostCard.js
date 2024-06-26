@@ -13,7 +13,7 @@ const PostCard = ({ postDetails }) => {
     const covertTitle = titleIntoUrl(title.rendered);
 
     return (
-        <div>
+        <div className='mb-5'>
             <div className="single-blog-post">
                 <div className="post-thumbnail">
                     {isLoading ?

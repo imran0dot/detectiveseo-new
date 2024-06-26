@@ -1,12 +1,13 @@
 import Head from "next/head";
 import Layouts from "../src/layouts/Layouts";
 import Link from "next/link";
+import ContactFrom from "../src/components/ContactFrom";
 
 const Contact = () => {
     return <Layouts pageTitle="Contact">
         <Head>
             <title>DetectiveSEO | Contact Us</title>
-            
+
         </Head>
         <section className="blog-area p-t-130 p-b-130">
             <div className="container">
@@ -49,32 +50,8 @@ const Contact = () => {
                                 <span className="tagline">Send Us Message</span>
                                 <h2 className="title">Have Any Questions ? <br /> Let’s Start to Talk</h2>
                             </div>
-                            <div className="contact-form-v2">
-                                <form>
-                                    <div className="input-field m-b-30">
-                                        <input type="text" id="fullName" placeholder="Full Name" name="name" required="" />
-                                        <label htmlFor="fullName">Name</label>
-                                    </div>
-                                    <div className="input-field m-b-30">
-                                        <input type="text" id="phoneNumber" placeholder="Phone Number" name="phone" required="" />
-                                        <label htmlFor="phoneNumber">Phone</label>
-                                    </div>
-                                    <div className="input-field m-b-30">
-                                        <input type="email" id="emailAddress" placeholder="Email Address" name="email" required="" />
-                                        <label htmlFor="emailAddress">Email</label>
-                                    </div>
-                                    <div className="input-field m-b-30">
-                                        <input type="text" id="subject" placeholder="I Would Like To Discuses " name="subject" required="" />
-                                        <label htmlFor="subject">Subject</label>
-                                    </div>
-                                    <div className="input-field textarea-field m-b-30">
-                                        <textarea id="message" placeholder="Message" name="message"></textarea>
-                                    </div>
-                                    <div className="input-field">
-                                        <button type="submit" className="template-btn">Send Message <i className="fas fa-arrow-right"></i></button>
-                                    </div>
-                                </form>
-                            </div>
+
+                            <ContactFrom />
                         </div>
                     </div>
                 </div>

@@ -4,6 +4,7 @@ import Counter from "../src/components/Counter";
 import Layouts from "../src/layouts/Layouts";
 import { testimonialActiveOne } from "../src/sliderProps";
 import Head from "next/head";
+import ContactFrom from "../src/components/ContactFrom";
 
 const Index = () => {
   return (
@@ -72,32 +73,37 @@ const Index = () => {
             />
           </div>
         </div>
-        <div className="container-fluid">
-          {/* <div className="hero-img text-center animate-float-bob-y">
-            <img src="assets/img/hero/app-dashboard.jpg" alt="image" />
-          </div> */}
-          <div className="row g-5 marketing-container">
-            <div className="col-lg-5 marketing-content">
-              <h1>Stop Overpaying For Your Clinic Website & Marketing</h1>
-              <p>Thousands of Clinic Owners rely on our powerful websites and marketing services to:</p>
-              <ul>
-                <li>Acquire more profitable patients</li>
-                <li>Improve your online reputation</li>
-                <li>Increase patient retention & reduce no-shows</li>
-              </ul>
+      </section>
+      {/* <!--====== End Hero Area Updated ======--> */}
+
+
+      {/* <!--====== Start Contact OWNERS Area ======--> */}
+      {/* <section className="data-analysis-section p-b-125">
+        <div className="container">
+          <div className="row align-items-center justify-content-center">
+            <div className="col-lg-5 col-md-10">
+              <div className="analysis-text-block p-l-50 p-l-md-0">
+                <h2>
+                  Stop Overpaying For Your Clinic Website & Marketing
+                </h2>
+                <p>Thousands of Clinic Owners rely on our powerful websites and marketing services to:</p>
+
+                <ul className="check-list m-t-30">
+                  <li>Acquire more profitable patients</li>
+                  <li>Improve your online reputation</li>
+                  <li>Increase patient retention & reduce no-shows</li>
+                </ul>
+
+              </div>
             </div>
-            <div className="col-lg-5 marketing-form-container">
-              <form className="marketing-form">
-                <input type="text" name="name" id="name" placeholder="Your Name *" />
-                <input type="text" name="email" id="email" placeholder="Your Email *" />
-                <textarea name="message" id="message" rows={5} placeholder="Your Message:"></textarea>
-                <input type="submit" value="Chat With A Specialist" className="submit-btn" />
-              </form>
+
+            <div className="col-lg-5 col-md-8">
+              <ContactFrom />
             </div>
           </div>
         </div>
-      </section>
-      {/* <!--====== End Hero Area Updated ======--> */}
+      </section> */}
+      {/* <!--====== End Contact OWNERS Area ======--> */}
 
 
 

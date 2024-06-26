@@ -7,7 +7,7 @@ export const blogApi = createApi({
   }),
   endpoints: (builder) => ({
     getAllBlog: builder.query({
-      query: () => `posts?_fields=id,title,featured_media,date,categories,content`, 
+      query: (per_page) => `posts?per_page=${per_page}&_fields=id,title,featured_media,date,categories,content`,
     }),
     findIdByTitle: builder.query({
       query: (title) => `/posts?_fields=id}&search=${encodeURIComponent(title)}`,
