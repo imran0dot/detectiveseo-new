@@ -4,7 +4,6 @@ import Counter from "../src/components/Counter";
 import Layouts from "../src/layouts/Layouts";
 import { testimonialActiveOne } from "../src/sliderProps";
 import Head from "next/head";
-import ContactFrom from "../src/components/ContactFrom";
 
 const Index = () => {
   return (

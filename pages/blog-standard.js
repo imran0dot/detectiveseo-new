@@ -8,13 +8,10 @@ import Head from "next/head";
 import { useGetAllBlogQuery } from "../src/features/apiSlice";
 import PostCardSkeleton from "../src/components/PorstCardSkeleton";
 
-
 const BlogStandard = () => {
   const [perPage, setPerPage] = useState(2);
   
-  const { data: blogs, error, isError, isLoading, refetch } = useGetAllBlogQuery(perPage); 
-
-
+  const { data: blogs, error, isError, isLoading } = useGetAllBlogQuery(perPage); 
 
   let content = <></>
 
@@ -85,7 +82,7 @@ const BlogStandard = () => {
               {/* post pagination  */}
               <div className="text-center cursor-pointer">
                 <button disabled={isLoading} className="template-btn" onClick={() => setPerPage(pre => pre + 2)}>
-                  Get Free Audit <i className="fas fa-arrow-right"></i>
+                  Load More<i className="fas fa-arrow-right"></i>
                 </button>
               </div>
             </div>
