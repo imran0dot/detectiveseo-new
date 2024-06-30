@@ -3,6 +3,8 @@ import { Fragment, useState } from "react";
 import { Blog, Demos, Pages1st, Pages2nd, Portfolio, Services } from "./Menus";
 import MobileMenu from "./MobileMenu";
 import SearchTrigger from "./SearchTrigger";
+import logo from '../../public/assets/img/detectiveseo.png';
+
 
 const Header = () => {
   const [trigger, setTrigger] = useState(false);
@@ -19,7 +21,7 @@ const Header = () => {
                   <Link href="/">
                     <a className="nav-text">
                       {/* TODO  */}
-                      <img src="assets/img/detectiveseo.png" alt="logo" width={250} />
+                      <img src={logo?.src} alt="logo" width={250} />
                       
                     </a>
                   </Link>
@@ -79,7 +81,7 @@ const Header = () => {
                   </li> */}
 
                   <li>
-                    <Link href="/blog-standard">
+                    <Link href="/blog">
                       <a>
                         Blog
                       </a>

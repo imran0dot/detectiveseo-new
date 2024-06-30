@@ -5,13 +5,46 @@ import Subscribe from "../src/components/Subscribe";
 import Layouts from "../src/layouts/Layouts";
 import PostCard from "../src/components/PostCard";
 import Head from "next/head";
-import { useGetAllBlogQuery } from "../src/features/apiSlice";
+import { useGetAllBlogQuery, useGetBlogCountQuery } from "../src/features/apiSlice";
 import PostCardSkeleton from "../src/components/PorstCardSkeleton";
+import Pagination from "../src/components/Pagination";
+import { useRouter } from 'next/router';
+
 
 const BlogStandard = () => {
-  const [perPage, setPerPage] = useState(2);
-  
-  const { data: blogs, error, isError, isLoading } = useGetAllBlogQuery(perPage); 
+  const router = useRouter();
+  const { query } = router;
+
+  const [urlQuery, setUrlQuery] = useState({
+    pageNumberQuery: query.page | 1,
+  });
+
+  const { data: totalCount } = useGetBlogCountQuery();
+  const pageSize = 7;
+
+
+
+  useEffect(() => {
+    if (query) {
+      router.push({
+        pathname: '/blog',
+        query: {
+          page: urlQuery.pageNumberQuery,
+        },
+      });
+    }
+    return
+  }, [urlQuery]);
+
+
+  const { data: postCount } = useGetBlogCountQuery();
+  const skipPerPage =6;
+  const { data: blogs, error, isError, isLoading, refetch } = useGetAllBlogQuery({
+    skip: +urlQuery.pageNumberQuery !== 1 ? +urlQuery.pageNumberQuery * skipPerPage : 0,
+    perPage: skipPerPage
+  });
+
+
 
   let content = <></>
 
@@ -67,7 +100,10 @@ const BlogStandard = () => {
       </Head>
 
       <section className="blog-area p-t-130 p-b-130">
+
         <div className="container">
+
+
           <div className="row justify-content-center">
 
             <div className="col-lg-8">
@@ -80,11 +116,12 @@ const BlogStandard = () => {
 
 
               {/* post pagination  */}
-              <div className="text-center cursor-pointer">
-                <button disabled={isLoading} className="template-btn" onClick={() => setPerPage(pre => pre + 2)}>
-                  Load More<i className="fas fa-arrow-right"></i>
-                </button>
-              </div>
+              <Pagination
+                totalCount={totalCount}
+                pageSize={pageSize}
+                setUrlQuery={setUrlQuery}
+                blogLength={postCount}
+                currentPageNumber={urlQuery.pageNumberQuery} />
             </div>
 
 
