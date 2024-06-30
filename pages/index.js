@@ -72,62 +72,37 @@ const Index = () => {
             />
           </div>
         </div>
-        <div className="container-fluid">
-          {/* <div className="hero-img text-center animate-float-bob-y">
-            <img src="assets/img/hero/app-dashboard.jpg" alt="image" />
-          </div> */}
-          <section className="blog-area p-t-130 p-b-130">
-            <div className="container">
-              <div className="row justify-content-lg-start justify-content-center">
-                <div className="col-lg-5 col-md-8">
-                  <div className="analysis-text-block p-l-50 p-l-md-0">
-                    <div className="common-heading tagline-boxed m-b-30">
-                      {/* <span className="tagline">CLINIC OWNERS</span> */}
-                      {/* <h2 className="title">Manage your data analysis easily</h2> */}
-                    </div>
-                    <h2>
-                      Stop Overpaying For Your Clinic Website & Marketing
-                    </h2>
-                    <p>Thousands of chiropractors rely on our powerful websites and marketing services to:</p>
-                    <ul className="check-list m-t-30">
-                      <li>Acquire more profitable patients</li>
-                      <li>Improve your online reputation</li>
-                      <li>Increase patient retention & reduce no-shows</li>
-                    </ul>
-
-                  </div>
-                </div>
-                <div className="col-lg-5 offset-xl-1 col-md-10">
-                  <div className="contact-form-area m-t-md-100">
-                    
-                    <div className="contact-form-v2">
-                      <form>
-                        <div className="input-field m-b-30">
-                          <input type="text" id="fullName" placeholder="Full Name" name="name" required="" className="" />
-                          <label htmlFor="fullName">Name</label>
-                        </div>
-
-                        <div className="input-field m-b-30">
-                          <input type="email" id="emailAddress" placeholder="Email Address" name="email" required="" />
-                          <label htmlFor="emailAddress">Email</label>
-                        </div>
-                        
-                        <div className="input-field textarea-field m-b-30">
-                          <textarea id="message" placeholder="Message" name="message" style={{height:"150px"}}></textarea>
-                        </div>
-                        <div className="input-field">
-                          <button type="submit" className="template-btn" >Chat With A Specialist <i className="fas fa-arrow-right"></i></button>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
       </section>
       {/* <!--====== End Hero Area Updated ======--> */}
+
+
+      {/* <!--====== Start Contact OWNERS Area ======--> */}
+      {/* <section className="data-analysis-section p-b-125">
+        <div className="container">
+          <div className="row align-items-center justify-content-center">
+            <div className="col-lg-5 col-md-10">
+              <div className="analysis-text-block p-l-50 p-l-md-0">
+                <h2>
+                  Stop Overpaying For Your Clinic Website & Marketing
+                </h2>
+                <p>Thousands of Clinic Owners rely on our powerful websites and marketing services to:</p>
+
+                <ul className="check-list m-t-30">
+                  <li>Acquire more profitable patients</li>
+                  <li>Improve your online reputation</li>
+                  <li>Increase patient retention & reduce no-shows</li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div className="col-lg-5 col-md-8">
+              <ContactFrom />
+            </div>
+          </div>
+        </div>
+      </section> */}
+      {/* <!--====== End Contact OWNERS Area ======--> */}
 
 
 

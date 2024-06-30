@@ -5,19 +5,13 @@ import Layouts from "../../src/layouts/Layouts";
 import { testimonialwidgetactive } from "../../src/sliderProps";
 import { useFindIdByTitleQuery, useGetBlogQuery, useGetMediaQuery } from "../../src/features/apiSlice";
 import { useRouter } from "next/dist/client/router";
-import { UrlToTitle, dateConvert } from "../../src/utils";
+import { UrlToTitle } from "../../src/utils";
 import BlogDetailsSkeleton from "../../src/components/BlogDetailsSkeleton";
 
-// Comment Related
-import commentAuthor from '../../public/assets/img/blog/author-thumbnail.jpg'
-import commentAvatar1 from '../../public/assets/img/blog/comment-avatar-1.jpg'
-import commentAvatar2 from '../../public/assets/img/blog/comment-avatar-2.jpg'
-import commentAvatar3 from '../../public/assets/img/blog/comment-avatar-3.jpg'
 import Head from "next/head";
 
 // This is the single blog page
 const BlogDetails = () => {
-  console.log(commentAuthor);
   // find id using url 
   const { asPath } = useRouter();
   const getTitlePatchFromPath = asPath.split('/')[2];
@@ -30,12 +24,7 @@ const BlogDetails = () => {
   const { data, isLoading, isError } = useGetBlogQuery(getTitlePatchFromPath);
 
   console.log(data);
-
   const { data: image, isLoading: imageLoading, isError: imageError } = useGetMediaQuery(data?.featured_media);
-
-  console.log(image);
-
-  const convertDate = dateConvert(data?.date);
 
   return (
     <Layouts pageTitle="Blog Details">
@@ -60,12 +49,12 @@ const BlogDetails = () => {
                     <ul className="post-meta">
                       <li>
                         <a href="#" className="post-meta">
-                          <i className="far fa-user"></i>DetectiveSEO
+                          <i className="far fa-user"></i>Nichel Jhon
                         </a>
                       </li>
                       <li>
                         <a href="#" className="post-meta">
-                          <i className="far fa-calendar-alt"></i>{convertDate}
+                          <i className="far fa-calendar-alt"></i>25 May 2021
                         </a>{" "}
                       </li>
                       <li>
@@ -194,330 +183,8 @@ const BlogDetails = () => {
                   </div>
                 </div>
               }
-              {/* <!-- Comments Template --> */}
-              <div className="comments-template">
-                <h4 className="template-title">People Comments</h4>
-
-                <ul className="comments-list">
-                  <li className="comment">
-                    <div className="comment-body">
-                      <div className="avatar">
-                        <img
-                          src={commentAvatar1?.src}
-                          alt="comment author one"
-                        />
-                      </div>
-                      <div className="comment-content">
-                        <h5 className="author-name">
-                          John F. Medina
-                          <span className="date">25 May, 2021</span>
-                        </h5>
-
-                        <p>
-                          Sed ut perspiciatis unde omnis iste natus error sit
-                          voluptatem accusantium doloremque laudantium, totam
-                          rem aperiam eaquequasi
-                        </p>
-                        <a href="#comment-respond" className="reply">
-                          Reply
-                        </a>
-                      </div>
-                    </div>
-                    <ul className="children">
-                      <li>
-                        <div className="comment-body">
-                          <div className="avatar">
-                            <img
-                              src={commentAvatar2?.src}
-                              alt="comment author two"
-                            />
-                          </div>
-                          <div className="comment-content">
-                            <h5 className="author-name">
-                              Jeffrey T. Kelly
-                              <span className="date">25 May, 2021</span>
-                            </h5>
-
-                            <p>
-                              Sed ut perspiciatis unde omnis iste natus error
-                              sit voluptatem accusantium doloremque laudantium,
-                              totam rem aperiam eaquequasi
-                            </p>
-                            <a href="#comment-respond" className="reply">
-                              Reply
-                            </a>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="comment">
-                    <div className="comment-body">
-                      <div className="avatar">
-                        <img
-                          src={commentAvatar3?.src}
-                          alt="comment author three"
-                        />
-                      </div>
-                      <div className="comment-content">
-                        <h5 className="author-name">
-                          Richard B. Zellmer
-                          <span className="date">25 May, 2021</span>
-                        </h5>
-
-                        <p>
-                          Sed ut perspiciatis unde omnis iste natus error sit
-                          voluptatem accusantium doloremque laudantium, totam
-                          rem aperiam eaquequasi
-                        </p>
-                        <a href="#comment-respond" className="reply">
-                          Reply
-                        </a>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-
-                <div className="comments-respond" id="comment-respond">
-                  <h4 className="template-title">Leave A Reply</h4>
-
-                  <form>
-                    <div className="row">
-                      <div className="col-md-6">
-                        <div className="input-field m-b-20">
-                          <input
-                            type="text"
-                            placeholder="Your Full Name"
-                            name="name"
-                            required=""
-                          />
-                          <div className="icon">
-                            <i className="far fa-user-alt"></i>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div className="input-field m-b-20">
-                          <input
-                            type="email"
-                            placeholder="Your Email "
-                            name="email"
-                            required=""
-                          />
-                          <div className="icon">
-                            <i className="far fa-envelope"></i>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-lg-12">
-                        <div className="input-field textarea-field m-b-20">
-                          <textarea
-                            placeholder="Write Message"
-                            name="message"
-                          ></textarea>
-                          <div className="icon">
-                            <i className="far fa-pencil-alt"></i>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-lg-12">
-                        <div className="input-field">
-                          <button className="template-btn">
-                            Send Comments <i className="fas fa-arrow-right"></i>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
             </div>
-            {/* <div className="col-lg-4">
-              <div className="blog-sidebar m-t-md-80">
-                <div className="widget search-widget">
-                  <h4>Search Here</h4>
-                  <form>
-                    <input type="search" placeholder="Search" name="search" />
-                    <button className="search-btn">
-                      <i className="far fa-search"></i>
-                    </button>
-                  </form>
-                </div>
-                <div className="widget category-widget">
-                  <h4 className="widget-title">Category</h4>
 
-                  <ul className="category-link">
-                    <li>
-                      <a href="#">Web Development</a>
-                    </li>
-                    <li>
-                      <a href="#">Email Marketing</a>
-                    </li>
-                    <li>
-                      <a href="#">IT Consultancy</a>
-                    </li>
-                    <li>
-                      <a href="#">Business Consulting</a>
-                    </li>
-                    <li>
-                      <a href="#">Apps Development</a>
-                    </li>
-                    <li>
-                      <a href="#">Media Marketing</a>
-                    </li>
-                    <li>
-                      <a href="#">SEO Optimizations</a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="widget latest-post-widget">
-                  <h4 className="widget-title">Latest News</h4>
-                  <div className="popular-posts-wrapper">
-                    <div className="popular-posts-item">
-                      <div className="popular-posts-thumbnail">
-                        <Link href="/blog-details">
-                          <a>
-                            <img
-                              src="public/assets/img/blog/latest-post-thumbnail-1.jpg"
-                              alt="latest post one"
-                            />
-                          </a>
-                        </Link>
-                      </div>
-                      <div className="popular-posts-item-content">
-                        <h5 className="popular-posts-title">
-                          <Link href="/blog-details">
-                            <a>Build Seamless Spreadshet Import Experience</a>
-                          </Link>
-                        </h5>
-                        <a href="#" className="posts-date">
-                          <i className="far fa-calendar-alt"></i> 25 May 2021
-                        </a>
-                      </div>
-                    </div>
-                    <div className="popular-posts-item">
-                      <div className="popular-posts-thumbnail">
-                        <Link href="/blog-details">
-                          <a>
-                            <img
-                              src="public/assets/img/blog/latest-post-thumbnail-2.jpg"
-                              alt="latest post two"
-                            />
-                          </a>
-                        </Link>
-                      </div>
-                      <div className="popular-posts-item-content">
-                        <h5 className="popular-posts-title">
-                          <Link href="/blog-details">
-                            <a>Creating Online Environment Work Well Older</a>
-                          </Link>
-                        </h5>
-                        <a href="#" className="posts-date">
-                          <i className="far fa-calendar-alt"></i> 25 May 2021
-                        </a>
-                      </div>
-                    </div>
-                    <div className="popular-posts-item">
-                      <div className="popular-posts-thumbnail">
-                        <Link href="/blog-details">
-                          <a>
-                            <img
-                              src="public/assets/img/blog/latest-post-thumbnail-3.jpg"
-                              alt="latest post three"
-                            />
-                          </a>
-                        </Link>
-                      </div>
-                      <div className="popular-posts-item-content">
-                        <h5 className="popular-posts-title">
-                          <Link href="/blog-details">
-                            <a>Signs Website Feels More Haunted House</a>
-                          </Link>
-                        </h5>
-                        <a href="#" className="posts-date">
-                          <i className="far fa-calendar-alt"></i> 25 May 2021
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="widget testimonial-widget">
-                  <Slider
-                    {...testimonialwidgetactive}
-                    className="testimonial-widget-active"
-                  >
-                    <div className="single-testimonial">
-                      <p>
-                        Quis autem vel eum iure reprehenderit qui in ea
-                        voluptate velit esse quam nihil molestiae conse quatur
-                        vellum rem
-                      </p>
-
-                      <div className="author">
-                        <img
-                          src="public/assets/img/testimonial/author-1.png"
-                          alt="Author"
-                        />
-                        <h6 className="name">
-                          Ricky L. Simpson
-                          <span className="position">Web designer</span>
-                        </h6>
-                      </div>
-                    </div>
-                    <div className="single-testimonial">
-                      <p>
-                        Quis autem vel eum iure reprehenderit qui in ea
-                        voluptate velit esse quam nihil molestiae conse quatur
-                        vellum rem
-                      </p>
-
-                      <div className="author">
-                        <img
-                          src="public/assets/img/testimonial/author-2.png"
-                          alt="Author"
-                        />
-                        <h6 className="name">
-                          Ricky L. Simpson
-                          <span className="position">Web designer</span>
-                        </h6>
-                      </div>
-                    </div>
-
-                    <div className="single-testimonial">
-                      <p>
-                        Quis autem vel eum iure reprehenderit qui in ea
-                        voluptate velit esse quam nihil molestiae conse quatur
-                        vellum rem
-                      </p>
-
-                      <div className="author">
-                        <img
-                          src="public/assets/img/testimonial/author-3.png"
-                          alt="Author"
-                        />
-                        <h6 className="name">
-                          Ricky L. Simpson
-                          <span className="position">Web designer</span>
-                        </h6>
-                      </div>
-                    </div>
-                  </Slider>
-                </div>
-                <div className="widget widget-tag-cloud">
-                  <h4 className="widget-title">Popular Tags</h4>
-                  <div className="tags">
-                    <a href="#">Landing</a>
-                    <a href="#">UI Design</a>
-                    <a href="#">Web</a>
-                    <a href="#">SEO</a>
-                    <a href="#">Development</a>
-                    <a href="#">UX/UI</a>
-                    <a href="#">Consulting</a>
-                    <a href="#">Mobile Apps</a>
-                  </div>
-                </div>
-              </div>
-            </div> */}
           </div>
         </div>
       </section>

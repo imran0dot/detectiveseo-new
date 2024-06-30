@@ -1,12 +1,14 @@
 import Head from "next/head";
 import Layouts from "../src/layouts/Layouts";
 import Link from "next/link";
+import ContactFrom from "../src/components/ContactFromV1";
+import ContactForm from "../src/components/ContactForm";
 
 const Contact = () => {
     return <Layouts pageTitle="Contact">
         <Head>
             <title>DetectiveSEO | Contact Us</title>
-            
+
         </Head>
         <section className="blog-area p-t-130 p-b-130">
             <div className="container">
@@ -49,32 +51,8 @@ const Contact = () => {
                                 <span className="tagline">Send Us Message</span>
                                 <h2 className="title">Have Any Questions ? <br /> Let’s Start to Talk</h2>
                             </div>
-                            <div className="contact-form-v2">
-                                <form>
-                                    <div className="input-field m-b-30">
-                                        <input type="text" id="fullName" placeholder="Full Name" name="name" required="" />
-                                        <label htmlFor="fullName">Name</label>
-                                    </div>
-                                    <div className="input-field m-b-30">
-                                        <input type="text" id="phoneNumber" placeholder="Phone Number" name="phone" required="" />
-                                        <label htmlFor="phoneNumber">Phone</label>
-                                    </div>
-                                    <div className="input-field m-b-30">
-                                        <input type="email" id="emailAddress" placeholder="Email Address" name="email" required="" />
-                                        <label htmlFor="emailAddress">Email</label>
-                                    </div>
-                                    <div className="input-field m-b-30">
-                                        <input type="text" id="subject" placeholder="I Would Like To Discuses " name="subject" required="" />
-                                        <label htmlFor="subject">Subject</label>
-                                    </div>
-                                    <div className="input-field textarea-field m-b-30">
-                                        <textarea id="message" placeholder="Message" name="message"></textarea>
-                                    </div>
-                                    <div className="input-field">
-                                        <button type="submit" className="template-btn">Send Message <i className="fas fa-arrow-right"></i></button>
-                                    </div>
-                                </form>
-                            </div>
+
+                            <ContactForm />
                         </div>
                     </div>
                 </div>
@@ -85,7 +63,8 @@ const Contact = () => {
             <div className="contact-map">
                 {/* <iframe src="https://maps.google.com/maps?q=new%20york&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"></iframe> */}
 
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3635.3767930410313!2d90.02627677535409!3d24.33336407827708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37560330a8f99541%3A0xbca4f66b12138aa1!2sLocal%20and%20Small%20Business%20SEO%20%7C%20Detective%20SEO!5e0!3m2!1sen!2sbd!4v1717653766551!5m2!1sen!2sbd" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3635.3767930410313!2d90.02627677535409!3d24.33336407827708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37560330a8f99541%3A0xbca4f66b12138aa1!2sLocal%20and%20Small%20Business%20SEO%20%7C%20Detective%20SEO!5e0!3m2!1sen!2sbd!4v1717653766551!5m2!1sen!2sbd" allowFullScreen loading="lazy"
+                referrerPolicy="no-referrer"></iframe>
             </div>
         </section>
 

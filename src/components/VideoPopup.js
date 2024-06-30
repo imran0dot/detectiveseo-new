@@ -47,7 +47,8 @@ const VideoPopup = ({ close, videoID }) => {
                 className="mfp-iframe"
                 src="//player.vimeo.com/video/87110435?autoplay=1"
                 frameBorder="0"
-                allowFullScreen=""
+                allowFullScreen
+                referrerPolicy="no-referrer"
               ></iframe>
             </div>
           </div>
