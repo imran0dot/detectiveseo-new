@@ -2,7 +2,6 @@ import { Fragment, useEffect, useState } from "react";
 import "../styles/globals.css";
 import { store } from '../src/store'
 import { Provider } from "react-redux";
-// import { Provider } from 'react-redux'
 
 function MyApp({ Component, pageProps }) {
   // const [loader, setLoader] = useState(true);
@@ -11,6 +10,9 @@ function MyApp({ Component, pageProps }) {
   //     setLoader(false);
   //   }, 300);
   // }, []);
+
+
+  // console.log('use selector', useSelector(state => state.auditModel))
   return (
     <Fragment>
       {/* {loader && <PreLoader />} */}
