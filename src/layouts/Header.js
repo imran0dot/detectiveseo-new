@@ -4,12 +4,16 @@ import { Blog, Demos, Pages1st, Pages2nd, Portfolio, Services } from "./Menus";
 import MobileMenu from "./MobileMenu";
 import SearchTrigger from "./SearchTrigger";
 import logo from '../../public/assets/img/detectiveseo.png';
+import { useDispatch, useSelector } from "react-redux";
+import { openAudit } from "../features/auditSlice";
 
 
 const Header = () => {
   const [trigger, setTrigger] = useState(false);
   const [mobileMenuTrigger, setMobileMenuTrigger] = useState(false);
 
+  const dispatch = useDispatch();
+  const { isActive: auditModal } = useSelector(state => state.auditModal);
   return (
     <Fragment>
       <header className="template-header navbar-center sticky-header">
@@ -22,7 +26,7 @@ const Header = () => {
                     <a className="nav-text">
                       {/* TODO  */}
                       <img src={logo?.src} alt="logo" width={250} />
-                      
+
                     </a>
                   </Link>
                 </div>
@@ -115,14 +119,13 @@ const Header = () => {
                   </a>
                 </li>
                 <li className="d-none d-lg-block">
-                  <Link href="/services">
-                    <a className="template-btn">
+                    <button onClick={() => dispatch(openAudit())} className="template-btn">
                       Get Free Audit <i className="fas fa-arrow-right"></i>
-                    </a>
-                  </Link>
+                    </button>
+                    
                 </li>
                 <li className="d-xl-none">
-                  
+
                   <a
                     href="#"
                     className="navbar-toggler"
@@ -146,6 +149,9 @@ const Header = () => {
         {/* <!-- End Mobile Slide Menu --> */}
       </header>
       <SearchTrigger close={() => setTrigger(false)} trigger={trigger} />
+
+        {/* Modal  */}
+        {auditModal && 'loading....'}
     </Fragment>
   );
 };
