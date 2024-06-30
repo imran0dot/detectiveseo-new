@@ -7,7 +7,13 @@ export const blogApi = createApi({
   }),
   endpoints: (builder) => ({
     getAllBlog: builder.query({
-      query: (per_page) => `posts?per_page=${per_page}&_fields=id,title,featured_media,date,categories,content`,
+      query: ({skip, perPage}) => `posts?offset=${skip}&per_page=${perPage}&_fields=id,title,featured_media,date,categories,content`,
+    }),
+    getBlogCount: builder.query({
+      query: () => `posts?per_page=1`,
+      transformResponse: (response, meta) => {
+        return meta.response.headers.get('X-WP-Total');
+      },
     }),
     findIdByTitle: builder.query({
       query: (title) => `/posts?_fields=id}&search=${encodeURIComponent(title)}`,
@@ -31,6 +37,6 @@ export const {
   useGetBlogQuery, 
   useGetMediaQuery, 
   useFindIdByTitleQuery,
-  use
+  useGetBlogCountQuery
 
 } = blogApi;

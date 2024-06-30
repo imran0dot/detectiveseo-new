@@ -137,49 +137,6 @@ const BlogDetails = () => {
                       </li>
                     </ul>
 
-                    <div className="post-author-box">
-                      <div className="author-thumbnail">
-                        <img
-                          src={commentAuthor?.src}
-                          alt="Post Author"
-                        />
-                      </div>
-                      <div className="author-content">
-                        <h4 className="name">Nathan George</h4>
-                        <p>
-                          Quis autem veleum iure reprehenderit quinea voluptate
-                          esse quam molestiae consequatu velillum dolorem fugiat
-                          quo voluptas nulla pariano one rejects
-                        </p>
-                        <ul className="social-links">
-                          <li>
-                            <a href="#">
-                              <i className="fab fa-facebook-f"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i className="fab fa-twitter"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i className="fab fa-instagram"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i className="fab fa-behance"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i className="fab fa-dribbble"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
                   </div>
                 </div>
               }

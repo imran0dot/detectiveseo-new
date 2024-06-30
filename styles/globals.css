@@ -23,3 +23,8 @@
 html {
   scroll-behavior: smooth;
 }
+
+
+.activePagination{
+  background: #473BF0;
+}
