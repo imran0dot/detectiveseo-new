@@ -1,7 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
-import PreLoader from "../src/layouts/PreLoader";
 import "../styles/globals.css";
-
 import { store } from '../src/store'
 import { Provider } from "react-redux";
 // import { Provider } from 'react-redux'

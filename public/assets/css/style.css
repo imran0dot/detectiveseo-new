@@ -10359,3 +10359,11 @@ textarea {
 .submit-btn:hover{
   background-color: black;
 }
+
+.blog-details h3{
+  margin-top: 15px;
+}
+
+.blog-details p{
+  margin-bottom: 15px;
+}

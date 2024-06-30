@@ -6,7 +6,7 @@ import SearchTrigger from "./SearchTrigger";
 import logo from '../../public/assets/img/detectiveseo.png';
 
 
-const Header = () => {
+const Header = ({handleModal}) => {
   const [trigger, setTrigger] = useState(false);
   const [mobileMenuTrigger, setMobileMenuTrigger] = useState(false);
 
@@ -115,11 +115,9 @@ const Header = () => {
                   </a>
                 </li>
                 <li className="d-none d-lg-block">
-                  <Link href="/services">
-                    <a className="template-btn">
+                    <button className="template-btn" onClick={handleModal}>
                       Get Free Audit <i className="fas fa-arrow-right"></i>
-                    </a>
-                  </Link>
+                    </button>
                 </li>
                 <li className="d-xl-none">
                   

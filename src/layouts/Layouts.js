@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Fragment, useEffect } from "react";
+import { Fragment, useEffect, useState } from "react";
 import {
   activeNavMenu,
   animation,
@@ -14,6 +14,19 @@ import ScrollTop from "./ScrollTop";
 
 
 const Layouts = ({ noHeader, noFooter, pageTitle, children }) => {
+
+  const [ showModal, setShowModal ] = useState(false);
+
+  const handleModal = () => {
+    console.log('modal clicked');
+    setShowModal(true);
+  }
+
+  const closeModal = () => {
+    setShowModal(false);
+  }
+
+
   useEffect(() => {
     animation();
     activeNavMenu();
@@ -44,7 +57,7 @@ const Layouts = ({ noHeader, noFooter, pageTitle, children }) => {
         </script>
         {/* <!--End of Tawk.to Script--> */}
       </Head>
-      {!noHeader && <Header />}
+      {!noHeader && <Header handleModal={handleModal} />}
       {pageTitle && <Banner pageName={pageTitle} />}
       {children}
       <ScrollTop />
