@@ -4,11 +4,22 @@ import { Blog, Demos, Pages1st, Pages2nd, Portfolio, Services } from "./Menus";
 import MobileMenu from "./MobileMenu";
 import SearchTrigger from "./SearchTrigger";
 import logo from '../../public/assets/img/detectiveseo.png';
+import { useDispatch, useSelector } from "react-redux";
+import { closeAudit, openAudit } from "../features/auditSlice";
+import AuditModal from "../components/AuditModal";
+import { ToastContainer, toast } from "react-toastify";
 
 
-const Header = () => {
+const Header = ({handleModal}) => {
   const [trigger, setTrigger] = useState(false);
   const [mobileMenuTrigger, setMobileMenuTrigger] = useState(false);
+
+  const dispatch = useDispatch();
+  const { isActive: auditModal } = useSelector(state => state.auditModal);
+  console.log(auditModal);
+  const handleClose = () =>{
+    dispatch(closeAudit())
+  }
 
   return (
     <Fragment>
@@ -22,7 +33,7 @@ const Header = () => {
                     <a className="nav-text">
                       {/* TODO  */}
                       <img src={logo?.src} alt="logo" width={250} />
-                      
+
                     </a>
                   </Link>
                 </div>
@@ -115,14 +126,14 @@ const Header = () => {
                   </a>
                 </li>
                 <li className="d-none d-lg-block">
-                  <Link href="/services">
-                    <a className="template-btn">
+
+                    <button className="template-btn" onClick={()=> dispatch(openAudit())}>
                       Get Free Audit <i className="fas fa-arrow-right"></i>
-                    </a>
-                  </Link>
+                    </button>
+
                 </li>
                 <li className="d-xl-none">
-                  
+
                   <a
                     href="#"
                     className="navbar-toggler"
@@ -136,6 +147,7 @@ const Header = () => {
               </ul>
             </div>
           </div>
+          <ToastContainer/>
         </div>
 
         {/* <!-- Start Mobile Slide Menu --> */}
@@ -146,6 +158,10 @@ const Header = () => {
         {/* <!-- End Mobile Slide Menu --> */}
       </header>
       <SearchTrigger close={() => setTrigger(false)} trigger={trigger} />
+
+        {/* Modal  */}
+        {auditModal && <AuditModal handleClose={handleClose} />}
+        
     </Fragment>
   );
 };

@@ -5,7 +5,7 @@ import Layouts from "../../src/layouts/Layouts";
 import { testimonialwidgetactive } from "../../src/sliderProps";
 import { useFindIdByTitleQuery, useGetBlogQuery, useGetMediaQuery } from "../../src/features/apiSlice";
 import { useRouter } from "next/dist/client/router";
-import { UrlToTitle } from "../../src/utils";
+import { UrlToTitle, dateConvert } from "../../src/utils";
 import BlogDetailsSkeleton from "../../src/components/BlogDetailsSkeleton";
 
 import Head from "next/head";
@@ -25,7 +25,7 @@ const BlogDetails = () => {
 
   console.log(data);
   const { data: image, isLoading: imageLoading, isError: imageError } = useGetMediaQuery(data?.featured_media);
-
+  const convertDate = dateConvert(data?.date);
   return (
     <Layouts pageTitle="Blog Details">
       <Head>
@@ -49,25 +49,21 @@ const BlogDetails = () => {
                     <ul className="post-meta">
                       <li>
                         <a href="#" className="post-meta">
-                          <i className="far fa-user"></i>Nichel Jhon
+                          <i className="far fa-user"></i>DetectiveSEO
                         </a>
                       </li>
                       <li>
                         <a href="#" className="post-meta">
-                          <i className="far fa-calendar-alt"></i>25 May 2021
-                        </a>{" "}
-                      </li>
-                      <li>
-                        <a href="#" className="post-meta">
-                          <i className="far fa-comment-dots"></i>Comments (05)
+                          <i className="far fa-calendar-alt"></i>{convertDate}
                         </a>
                       </li>
+                      
                     </ul>
                     <h3 className="post-title">
                       {data?.title?.rendered}
                     </h3>
 
-                    <div dangerouslySetInnerHTML={{ __html: data ? data?.content?.rendered : '' }}></div>
+                    <div className="d-flex flex-column blog-details" dangerouslySetInnerHTML={{ __html: data ? data?.content?.rendered : '' }}></div>
 
 
                     {/* <blockquote className="blockquote">

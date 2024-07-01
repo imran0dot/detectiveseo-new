@@ -1,16 +1,18 @@
 require('dotenv').config()
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, Fragment } from 'react';
 import emailjs from '@emailjs/browser';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const ContactForm = () => {
-    const [successMessage , setSuccessMessage ] = useState(false)
-    const form = useRef();
+    const [successMessage, setSuccessMessage] = useState(false);
+    const [errorMessage, setErrorMessage] = useState(false);
 
+    const form = useRef();
     const sendEmail = (e) => {
 
         e.preventDefault();
+        setErrorMessage(false);
         setSuccessMessage(false);
-        // console.log(e.target);
         const MyForm = e.target;
         emailjs
             .sendForm(
@@ -23,7 +25,14 @@ const ContactForm = () => {
                 () => {
                     MyForm.reset();
                     setSuccessMessage(true);
+                    setSuccessMessage(true)
+                    toast( `Message sent successfully!
+                        You will get a reply within one business day`, {
+                        position: "top-right",
+                        
+                        });
                     console.log('SUCCESS!');
+
                 },
                 (error) => {
                     console.log('FAILED...', error.text);
@@ -31,10 +40,9 @@ const ContactForm = () => {
             );
     };
 
-    console.log(successMessage);
-
     return (
         <div className="contact-form-v2">
+
             <form ref={form} onSubmit={sendEmail}>
                 <div className="input-field m-b-30">
                     <input type="text" id="fullName" placeholder="Full Name" name="name" required />
@@ -52,9 +60,25 @@ const ContactForm = () => {
                     <textarea id="message" placeholder="Message" name="message"></textarea>
                 </div>
                 <div className="input-field">
-                    <button type="submit" className={`template-btn ${successMessage && 'bg-danger border border-danger'}`}>Send Message <i className="fas fa-arrow-right"></i></button>
+                    {
+                        successMessage ? (
+                            <p className="text-success">Message sent successfully! <br />You will get a reply within one business day</p>
+                        ) : (
+                            ''
+                        )
+                    }
+
+                    {
+                        errorMessage ? (
+                            <p className="error-message text-success">Failed to send message. Please try again later. </p>
+                        ) : (
+                            ''
+                        )
+                    }
+                    <button type="submit" className={`template-btn`}>Send Message <i className="fas fa-arrow-right"></i></button>
                 </div>
             </form>
+            <ToastContainer/>
         </div>
     );
 };
