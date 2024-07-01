@@ -10447,3 +10447,15 @@ input[type="email"] {
   top: -5%;
   right: -5%;
 }
+
+.terms p{
+  margin: 15px 0px;
+}
+
+.terms ul{
+  list-style: circle;
+  list-style-type: disc;
+  margin-left: 20px;
+  color: #000;
+  margin-bottom: 15px;
+}
