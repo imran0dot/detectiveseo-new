@@ -10448,14 +10448,18 @@ input[type="email"] {
   right: -5%;
 }
 
-.terms p{
+.terms p , .privacy p{
   margin: 15px 0px;
 }
 
-.terms ul{
+.terms ul , .privacy ul{
   list-style: circle;
   list-style-type: disc;
   margin-left: 20px;
   color: #000;
   margin-bottom: 15px;
+}
+
+.privacy ul li span{
+  font-weight: 700;
 }
