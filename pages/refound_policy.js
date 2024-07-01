@@ -43,7 +43,7 @@ const refound_policy = () => {
                 <h4>Process for Requesting a Refund</h4>
                 <p>To request a refund, please follow these steps:</p>
                 <ul>
-                    <li><span>Contact Support: </span> Reach out to our support team via email at <a href="support@detectiveseo.com">support@detectiveseo.com</a> or through our <a href="https://detectiveseo.com/contact/">contact form.</a>
+                    <li><span>Contact Support: </span> Reach out to our support team via email at <a href="himel@detectiveseo.net">support@detectiveseo.com</a> or through our <a href="https://detectiveseo.com/contact/">contact form.</a>
                     </li>
                     <li><span>Provide Documentation: </span> Include all relevant details and documentation to support your refund request.</li>
                     <li><span>Review Period: </span> Our team will review your request and respond within 10 business days.</li>
@@ -59,14 +59,12 @@ const refound_policy = () => {
                 <p>DetectiveSEO reserves the right to update or modify this Refund Policy at any time. Any changes will be posted on this page and will take effect immediately upon posting.</p>
 
                 <p className='pt-3 border-top'>For any questions or concerns regarding this policy, please contact us at</p>
-                <a href="">support@detectiveseo.com.</a>
+                <a href="mailto:himel@detectiveseo.net">support@detectiveseo.com</a>
 
                 <p className="border-top border-bottom py-3">
                 © {new Date().getFullYear()} <a href="#">DetectiveSEO</a>. All Rights
                 Reserved
               </p>
-
-              <p>Feel free to customize this policy further to fit the specific needs and operations of your business.</p>
             </div>
         </section>
     </Layouts>;
