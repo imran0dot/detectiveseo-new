@@ -16,7 +16,6 @@ const Header = ({handleModal}) => {
 
   const dispatch = useDispatch();
   const { isActive: auditModal } = useSelector(state => state.auditModal);
-  console.log(auditModal);
   const handleClose = () =>{
     dispatch(closeAudit())
   }

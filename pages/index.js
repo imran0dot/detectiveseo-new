@@ -4,8 +4,11 @@ import Counter from "../src/components/Counter";
 import Layouts from "../src/layouts/Layouts";
 import { testimonialActiveOne } from "../src/sliderProps";
 import Head from "next/head";
+import { useDispatch } from "react-redux";
+import { openAudit } from "../src/features/auditSlice";
 
 const Index = () => {
+  const dispatch = useDispatch();
   return (
     <Layouts>
 
@@ -27,11 +30,9 @@ const Index = () => {
                 </h1>
                 <ul className="hero-btns d-flex justify-content-center">
                   <li className="wow fadeInUp" data-wow-delay="0.4s">
-                    <Link href="/services">
-                      <a className="template-btn">
+                      <button onClick={() => dispatch(openAudit())} className="template-btn">
                         Get Free Audit	 <i className="fas fa-arrow-right"></i>
-                      </a>
-                    </Link>
+                      </button>
                   </li>
                   <li className="wow fadeInUp" data-wow-delay="0.4s">
                     <Link href="https://wa.me/8801841129353">

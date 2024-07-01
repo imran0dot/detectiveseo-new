@@ -12,11 +12,11 @@ const AuditModal = ({ handleClose }) => {
     const [errorMessage, setErrorMessage] = useState(false);
 
     const form = useRef();
+    
     const sendEmail = (e) => {
 
         e.preventDefault();
         const MyForm = e.target;
-        console.log(MyForm);
         emailjs
             .sendForm(
                 process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
