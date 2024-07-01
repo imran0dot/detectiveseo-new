@@ -10304,12 +10304,12 @@ input[type="email"] {
 /* discount image */
 
 .discount{
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   position: absolute;
-  transform: rotate(-30deg);
-  top: -23%;
-  left: -23%;
+  transform: rotate(-35deg);
+  top: -19%;
+  left: -19%;
 }
 
 /* End Modal Content */
