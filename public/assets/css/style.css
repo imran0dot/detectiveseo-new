@@ -10448,11 +10448,11 @@ input[type="email"] {
   right: -5%;
 }
 
-.terms p , .privacy p{
+.terms p , .privacy p , .refound p{
   margin: 15px 0px;
 }
 
-.terms ul , .privacy ul{
+.terms ul , .privacy ul , .refound ul{
   list-style: circle;
   list-style-type: disc;
   margin-left: 20px;
@@ -10460,6 +10460,44 @@ input[type="email"] {
   margin-bottom: 15px;
 }
 
-.privacy ul li span{
-  font-weight: 700;
+.privacy ul li span , .refound ul li span{
+  font-weight: 600;
+}
+
+.mission-container , .vision-container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 50px;
+}
+
+.mission-image , .vision-image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.vision-image img{
+  width: 70%;
+  border-radius: 200px;
+}
+
+.mission-title , .vision-title{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.mission-title span, .vision-title span{
+  color: #0057ff;
+}
+.mission-title .icon, .vision-title .icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-color: #0050e56b;
+  border-radius: 50%;
 }

@@ -1,7 +1,16 @@
 import Head from "next/head";
 import Counter from "../src/components/Counter";
 import Layouts from "../src/layouts/Layouts";
-
+import aboutThumb1 from '../public/assets/img/preview-gallery/about-thumbnail-1.jpg'
+import aboutThumb2 from '../public/assets/img/preview-gallery/about-thumbnail-2.jpg'
+import aboutThumb3 from '../public/assets/img/preview-gallery/about-thumbnail-3.jpg'
+import aboutThumb4 from '../public/assets/img/preview-gallery/about-thumbnail-4.jpg'
+import leftParticle from '../public/assets/img/particle/cta-left-particle-1.png'
+import rightParticle from '../public/assets/img/particle/cta-right-particle-1.png'
+import missionImg from '../public/assets/img/mission.jpg'
+import Our_Vision from '../public/assets/img/our_vision.jpg'
+import missionIcon from '../public/assets/img/mission.png'
+import visionIcon from '../public/assets/img/vision.png'
 const About = () => {
   return (
     <Layouts pageTitle="About Company">
@@ -16,22 +25,22 @@ const About = () => {
                 <div className="images-left">
                   <div className="image-hover-zoom-overly">
                     <img
-                      src="assets/img/preview-gallery/about-thumbnail-1.jpg"
+                      src={aboutThumb1?.src}
                       alt="About thumbnail one"
                     />
                   </div>
                   <img
-                    src="assets/img/preview-gallery/about-thumbnail-3.jpg"
+                    src={aboutThumb3?.src}
                     alt="About thumbnail three"
                   />
                 </div>
                 <div className="images-right">
                   <img
-                    src="assets/img/preview-gallery/about-thumbnail-2.jpg"
+                    src={aboutThumb2?.src}
                     alt="About thumbnail two"
                   />
                   <img
-                    src="assets/img/preview-gallery/about-thumbnail-4.jpg"
+                    src={aboutThumb4?.src}
                     alt="About thumbnail four"
                   />
                 </div>
@@ -44,8 +53,8 @@ const About = () => {
                 </div>
                 <p>
                   Welcome to Detective SEO, your premier partner in website design and local SEO services tailored specifically for the healthcare industry. We understand the unique challenges and opportunities within the healthcare sector, and our mission is to help your practice stand out in an increasingly digital world.
-                  <br /> 
-                  <span style={{margin:"10px 0px"}}>With our expert team of designers and SEO specialists, we create visually appealing, user-friendly websites that not only attract but also retain patients. </span>
+                  <br />
+                  <span style={{ margin: "10px 0px" }}>With our expert team of designers and SEO specialists, we create visually appealing, user-friendly websites that not only attract but also retain patients. </span>
                   <br />
                   Our local SEO strategies are meticulously crafted to improve your online visibility, ensuring that potential patients in your community can easily find and trust your services. At Detective SEO, we are dedicated to boosting your online presence and driving measurable growth for your healthcare practice.
                 </p>
@@ -55,6 +64,8 @@ const About = () => {
         </div>
       </section>
       {/* <!-- ===== About Area End ===== --> */}
+
+
 
       {/* <!-- ===== Service Section Start ===== --> */}
       {/* <section className="service-area p-t-130 p-b-130">
@@ -124,8 +135,11 @@ const About = () => {
       </section> */}
       {/* <!-- ===== Service Section End ===== --> */}
 
+
+
+
       {/* <!--====== Start Team Loop ======--> */}
-      <section className="team-member-area section-half-dots-pattern-fixed p-t-30 p-b-100">
+      {/* <section className="team-member-area section-half-dots-pattern-fixed p-t-30 p-b-100">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-xl-5 col-lg-6">
@@ -347,7 +361,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            {/* <div className="col-xl-4 col-lg-4 col-sm-6">
+            <div className="col-xl-4 col-lg-4 col-sm-6">
               <div className="member-box m-b-30">
                 <div className="member-photo">
                   <img src="assets/img/team/member-7.jpg" alt="Member Photo" />
@@ -416,11 +430,59 @@ const About = () => {
                   </ul>
                 </div>
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <!--====== End Team Loop ======--> */}
+
+
+
+
+      {/* <!--====== Start Mission Section ======--> */}
+      <section className="p-b-30 my-5">
+        <div className="container">
+          {/* Our Mission */}
+          <div className="mission-container">
+
+            <div>
+              <div className="mission-title">
+                <div className="icon">
+                  <img src={missionIcon?.src} alt="Mission" width={40} />
+                </div>
+                <h1>Our <span>Mission</span></h1>
+              </div>
+              <p>At DetectiveSEO, our mission is to empower healthcare and physiotherapy practices with innovative and effective digital marketing strategies. We understand the unique challenges faced by small clinics and solo practitioners in today's competitive healthcare environment. Our goal is to provide customized solutions that enhance your online presence, attract more patients, and ultimately help your practice thrive. By focusing on website design, SEO, social media management, and more, we are dedicated to driving measurable results and delivering a significant return on your marketing investment.</p>
+            </div>
+
+            <div className="mission-image">
+              <img src={missionImg?.src} alt="Our_Mission" width={350} />
+            </div>
+          </div>
+
+
+          {/* Our Vision*/}
+          <div className="vision-container">
+            <div className="vision-image">
+              <img src={Our_Vision?.src} alt="Our_Vision" width={500} />
+            </div>
+
+            <div className="vision-content">
+              <div className="vision-title">
+                <div className="icon">
+                  <img src={visionIcon?.src} alt="vision" width={40} />
+                </div>
+                <h1>Our <span>Vision</span></h1>
+              </div>
+              <p>At DetectiveSEO, our mission is to empower healthcare and physiotherapy practices with innovative and effective digital marketing strategies. We understand the unique challenges faced by small clinics and solo practitioners in today's competitive healthcare environment. Our goal is to provide customized solutions that enhance your online presence, attract more patients, and ultimately help your practice thrive. By focusing on website design, SEO, social media management, and more, we are dedicated to driving measurable results and delivering a significant return on your marketing investment.</p>
+            </div>
+          </div>
+
+
+        </div>
+      </section>
+      {/* <!--====== End Mission Section ======--> */}
+
 
       {/* <!--====== Start CTA Section ======--> */}
       <section className="cta-section cta-with-particle border-bottom-primary p-b-30">
@@ -449,12 +511,12 @@ const About = () => {
           <div className="cta-particle d-none d-md-block">
             <img
               className="particle-left"
-              src="assets/img/particle/cta-left-particle-1.png"
+              src={leftParticle?.src}
               alt="cta particle 1"
             />
             <img
               className="particle-right"
-              src="assets/img/particle/cta-right-particle-1.png"
+              src={rightParticle?.src}
               alt="cta particle 2"
             />
           </div>
