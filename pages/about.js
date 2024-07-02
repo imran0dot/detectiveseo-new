@@ -1,17 +1,19 @@
 import Head from "next/head";
 import Counter from "../src/components/Counter";
 import Layouts from "../src/layouts/Layouts";
-import aboutThumb1 from '../public/assets/img/preview-gallery/about-thumbnail-1.jpg'
-import aboutThumb2 from '../public/assets/img/preview-gallery/about-thumbnail-2.jpg'
-import aboutThumb3 from '../public/assets/img/preview-gallery/about-thumbnail-3.jpg'
-import aboutThumb4 from '../public/assets/img/preview-gallery/about-thumbnail-4.jpg'
-import leftParticle from '../public/assets/img/particle/cta-left-particle-1.png'
-import rightParticle from '../public/assets/img/particle/cta-right-particle-1.png'
-import missionImg from '../public/assets/img/mission.jpg'
-import Our_Vision from '../public/assets/img/our_vision.jpg'
-import missionIcon from '../public/assets/img/mission.png'
-import visionIcon from '../public/assets/img/vision.png'
+import aboutThumb1 from '/public/assets/img/preview-gallery/about-thumbnail-one.png'
+import aboutThumb2 from '/public/assets/img/preview-gallery/about-thumbnail-2.png'
+import aboutThumb3 from '/public/assets/img/preview-gallery/about-thumbnail-3.png'
+import aboutThumb4 from '/public/assets/img/preview-gallery/about-thumbnail-4.png'
+import leftParticle from '/public/assets/img/particle/cta-left-particle-1.png'
+import rightParticle from '/public/assets/img/particle/cta-right-particle-1.png'
+import missionImg from '/public/assets/img/preview-gallery/mission.png'
+import Our_Vision from '/public/assets/img/preview-gallery/our_vision.png'
+import missionIcon from '/public/assets/img/mission.png'
+import visionIcon from '/public/assets/img/vision.png'
 const About = () => {
+
+
   return (
     <Layouts pageTitle="About Company">
       <Head>
