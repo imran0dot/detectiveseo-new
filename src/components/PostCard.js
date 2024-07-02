@@ -45,7 +45,7 @@ const PostCard = ({ postDetails }) => {
                         </li>
                     </ul>
                     <h4 className="post-title">
-                        <Link href="/blog-details">
+                        <Link href={`/blog/${id}`}>
                             <a>
                                 {title.rendered}
                             </a>
